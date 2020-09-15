@@ -31,4 +31,33 @@ class RootRouter: Router{
           navigationController?.pushViewController(testViewController, animated: true)
     }
     
+    func showSchedule(){
+        guard
+          let scheduleViewController = UIStoryboard.storyboard(.main).instantiateViewController(ScheduleViewController.self) else {
+            return
+        }
+        //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
+        scheduleViewController.router = self
+        navigationController?.pushViewController(scheduleViewController, animated: false)
+    }
+    
+    func showMore(){
+        guard
+          let moreViewController = UIStoryboard.storyboard(.more).instantiateViewController(MoreViewController.self) else {
+            return
+        }
+        //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
+        moreViewController.router = self
+        navigationController?.pushViewController(moreViewController, animated: false)
+    }
+    
+    func showAttendance(){
+        guard
+          let attendanceViewController = UIStoryboard.storyboard(.attend).instantiateViewController(AttendanceViewController.self) else {
+            return
+        }
+        //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
+        attendanceViewController.router = self
+        navigationController?.pushViewController(attendanceViewController, animated: false)
+    }
 }

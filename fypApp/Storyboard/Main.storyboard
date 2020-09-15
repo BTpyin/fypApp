@@ -7,15 +7,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Home-->
         <scene sceneID="nLM-N2-PPm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUN-dl-G3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Aqe-rL-fve" customClass="RootNavigationController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="hru-Ng-J8Q"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-black" id="hru-Ng-J8Q"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="241" y="94"/>
+            <point key="canvasLocation" x="241" y="-737"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="0lW-AE-Ipb">
+            <objects>
+                <navigationController id="iv3-wt-0mf" customClass="RootScheduleNavigationController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" id="09A-SX-46E"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rYQ-wO-Q5D">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FjR-nG-euc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="799"/>
+        </scene>
+        <!--Root More Navigation Controller-->
+        <scene sceneID="KjL-Te-cTP">
+            <objects>
+                <navigationController id="oJC-px-ioD" customClass="RootMoreNavigationController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="F7I-QN-HzT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQd-wf-ttX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NGc-oY-0Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="1444"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="zfe-1O-Aeb">
+            <objects>
+                <viewController storyboardIdentifier="ScheduleViewController" id="FG6-Ow-xUj" customClass="ScheduleViewController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="86l-AP-4bC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7Al-Tr-Jl7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzJ-HG-Qn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="799"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="bsF-6T-NgB">
@@ -40,23 +83,21 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="95.758928571428569"/>
+            <point key="canvasLocation" x="945" y="-735"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="hnf-YL-4fK">
+        <!--Attendance-->
+        <scene sceneID="65R-Ly-8AK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pt3-XQ-JIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="fd7-qK-IjL" customClass="RootNavigationController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WhZ-Wu-ZJw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="sLf-2G-Hnb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="cMI-Fc-xUo"/>
-                </viewController>
+                <navigationController id="Flr-6M-9P4" customClass="RootAttendanceNavigationController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Attendance" id="Gcs-q0-XJJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jFw-ed-ezt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wq-nw-Ok5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-554"/>
+            <point key="canvasLocation" x="293" y="-14"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZHi-YN-LnO">
@@ -69,8 +110,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fd7-qK-IjL" kind="relationship" relationship="viewControllers" id="RWb-3Q-RJE"/>
                         <segue destination="Aqe-rL-fve" kind="relationship" relationship="viewControllers" id="4JX-Mr-mFZ"/>
+                        <segue destination="Flr-6M-9P4" kind="relationship" relationship="viewControllers" id="1NH-Eo-1Bh"/>
+                        <segue destination="iv3-wt-0mf" kind="relationship" relationship="viewControllers" id="C0x-Fs-1T5"/>
+                        <segue destination="oJC-px-ioD" kind="relationship" relationship="viewControllers" id="iFs-d5-e9T"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -98,7 +141,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rxj-ec-mA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="94"/>
+            <point key="canvasLocation" x="1748" y="-737"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home-black" width="36" height="36"/>
+    </resources>
 </document>

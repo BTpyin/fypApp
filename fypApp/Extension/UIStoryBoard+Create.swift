@@ -9,7 +9,8 @@ import UIKit
 extension UIStoryboard {
     enum Storyboard: String {
         case main = "Main"
-
+        case more = "More"
+        case attend = "Attendance"
     }
 
  static func storyboard(_ storyboard: Storyboard) -> UIStoryboard {
