@@ -155,13 +155,12 @@
 		0E921A03250F844300CD001B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E921A6A2510B30600CD001B /* Schedule */,
+				0E921A692510B2FB00CD001B /* More */,
+				0E921A682510B2ED00CD001B /* Attendnace */,
+				0E921A672510B2DE00CD001B /* Home */,
 				0E921A04250F845000CD001B /* NavigationController */,
 				0E921A07250F85B000CD001B /* BaseViewController.swift */,
-				0E921A0F250F91E500CD001B /* HomeViewController.swift */,
-				0E921A54250FAA8100CD001B /* TestViewController.swift */,
-				0E921A592510AA9100CD001B /* ScheduleViewController.swift */,
-				0E921A5D2510AD5900CD001B /* MoreViewController.swift */,
-				0E921A652510B0F200CD001B /* AttendanceViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -186,6 +185,39 @@
 				0E921A632510B0C700CD001B /* Attendance.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0E921A672510B2DE00CD001B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0E921A0F250F91E500CD001B /* HomeViewController.swift */,
+				0E921A54250FAA8100CD001B /* TestViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0E921A682510B2ED00CD001B /* Attendnace */ = {
+			isa = PBXGroup;
+			children = (
+				0E921A652510B0F200CD001B /* AttendanceViewController.swift */,
+			);
+			path = Attendnace;
+			sourceTree = "<group>";
+		};
+		0E921A692510B2FB00CD001B /* More */ = {
+			isa = PBXGroup;
+			children = (
+				0E921A5D2510AD5900CD001B /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		0E921A6A2510B30600CD001B /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				0E921A592510AA9100CD001B /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
