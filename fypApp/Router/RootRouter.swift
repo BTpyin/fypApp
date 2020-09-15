@@ -16,6 +16,7 @@ class RootRouter: Router{
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         homeViewController.router = self
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         homeViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(homeViewController, animated: false)
     }
@@ -26,9 +27,9 @@ class RootRouter: Router{
               return
           }
           
-          testViewController.router = self
-          
-          navigationController?.pushViewController(testViewController, animated: true)
+        testViewController.router = self
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.pushViewController(testViewController, animated: true)
     }
     
     func showSchedule(){
@@ -38,6 +39,7 @@ class RootRouter: Router{
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         scheduleViewController.router = self
+        //navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(scheduleViewController, animated: false)
     }
     
@@ -48,6 +50,7 @@ class RootRouter: Router{
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         moreViewController.router = self
+        //navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(moreViewController, animated: false)
     }
     
@@ -58,6 +61,7 @@ class RootRouter: Router{
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         attendanceViewController.router = self
+        //navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(attendanceViewController, animated: false)
     }
 }

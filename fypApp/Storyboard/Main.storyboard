@@ -25,11 +25,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rYQ-wO-Q5D">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.74020636080000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjR-nG-euc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="799"/>
+            <point key="canvasLocation" x="293" y="702"/>
         </scene>
         <!--Root More Navigation Controller-->
         <scene sceneID="KjL-Te-cTP">
@@ -39,13 +40,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQd-wf-ttX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.74020636080000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGc-oY-0Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1444"/>
+            <point key="canvasLocation" x="293" y="1409"/>
         </scene>
-        <!--Schedule View Controller-->
+        <!--Title-->
         <scene sceneID="zfe-1O-Aeb">
             <objects>
                 <viewController storyboardIdentifier="ScheduleViewController" id="FG6-Ow-xUj" customClass="ScheduleViewController" customModule="fypApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,10 +57,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7Al-Tr-Jl7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="i9W-nb-Cqc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzJ-HG-Qn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="799"/>
+            <point key="canvasLocation" x="1036" y="702"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="bsF-6T-NgB">
@@ -120,6 +123,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jFw-ed-ezt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.74020636080000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wq-nw-Ok5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,6 +139,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.74020636079774371" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.74020636080000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Aqe-rL-fve" kind="relationship" relationship="viewControllers" id="4JX-Mr-mFZ"/>
