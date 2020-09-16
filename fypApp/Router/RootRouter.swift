@@ -16,7 +16,7 @@ class RootRouter: Router{
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         homeViewController.router = self
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        //navigationController?.setNavigationBarHidden(true, animated: animated)
         homeViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(homeViewController, animated: false)
     }
