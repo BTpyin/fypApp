@@ -32,6 +32,8 @@
 		0E921A622510B04900CD001B /* RootAttendanceNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E921A612510B04900CD001B /* RootAttendanceNavigationController.swift */; };
 		0E921A642510B0C700CD001B /* Attendance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E921A632510B0C700CD001B /* Attendance.storyboard */; };
 		0E921A662510B0F200CD001B /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E921A652510B0F200CD001B /* AttendanceViewController.swift */; };
+		0E97508F251364AD000711ED /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97508E251364AD000711ED /* Student.swift */; };
+		0E975091251368F2000711ED /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E975090251368F2000711ED /* Course.swift */; };
 		249D7B231B12396E438B6976 /* Pods_fypApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		0E921A612510B04900CD001B /* RootAttendanceNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAttendanceNavigationController.swift; sourceTree = "<group>"; };
 		0E921A632510B0C700CD001B /* Attendance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Attendance.storyboard; sourceTree = "<group>"; };
 		0E921A652510B0F200CD001B /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		0E97508E251364AD000711ED /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		0E975090251368F2000711ED /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		10A2072963DE02C1A4C05AC4 /* Pods-fypApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fypApp.debug.xcconfig"; path = "Target Support Files/Pods-fypApp/Pods-fypApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fypApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE09A49A6B4F116CA2BEF4F /* Pods-fypApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fypApp.release.xcconfig"; path = "Target Support Files/Pods-fypApp/Pods-fypApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		0E9219E0250F800100CD001B /* fypApp */ = {
 			isa = PBXGroup;
 			children = (
+				0E97508D2513648E000711ED /* Model */,
 				0E921A562510A90E00CD001B /* Storyboard */,
 				0E921A03250F844300CD001B /* ViewController */,
 				0E9219FC250F833600CD001B /* Router */,
@@ -218,6 +223,15 @@
 				0E921A592510AA9100CD001B /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		0E97508D2513648E000711ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E97508E251364AD000711ED /* Student.swift */,
+				0E975090251368F2000711ED /* Course.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
@@ -349,6 +363,7 @@
 				0E921A5A2510AA9100CD001B /* ScheduleViewController.swift in Sources */,
 				0E921A5C2510AC8B00CD001B /* RootMoreNavigation Controller.swift in Sources */,
 				0E9219E2250F800100CD001B /* AppDelegate.swift in Sources */,
+				0E97508F251364AD000711ED /* Student.swift in Sources */,
 				0E921A00250F83CE00CD001B /* TabBarController.swift in Sources */,
 				0E921A582510A9A100CD001B /* RootScheduleController.swift in Sources */,
 				0E9219F7250F829D00CD001B /* UIButtonDesignExtension.swift in Sources */,
@@ -360,6 +375,7 @@
 				0E921A0E250F8F7100CD001B /* UIStoryBoard+Create.swift in Sources */,
 				0E921A622510B04900CD001B /* RootAttendanceNavigationController.swift in Sources */,
 				0E9219FE250F834E00CD001B /* Router.swift in Sources */,
+				0E975091251368F2000711ED /* Course.swift in Sources */,
 				0E921A08250F85B000CD001B /* BaseViewController.swift in Sources */,
 				0E921A06250F846C00CD001B /* BaseNavigationController.swift in Sources */,
 				0E9219F9250F82DF00CD001B /* UIViewRoundCornerExtension.swift in Sources */,
