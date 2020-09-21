@@ -19,6 +19,7 @@ class Student: Object, Mappable{
     @objc dynamic var program : String?
     @objc dynamic var major : String?
     @objc dynamic var scheduleLink : String?
+    @objc dynamic var weekRecord: [Class]?
     
     required convenience init?(map: Map) {
       self.init()
@@ -32,6 +33,7 @@ class Student: Object, Mappable{
         program <- map["program"]
         major <- map["major"]
         scheduleLink <- map["scheduleLink"]
+        weekRecord <- map["weekRecord"]
     }
     
 
