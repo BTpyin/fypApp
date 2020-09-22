@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */; };
 		0E9219E2250F800100CD001B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9219E1250F800100CD001B /* AppDelegate.swift */; };
 		0E9219E8250F800300CD001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219E7250F800300CD001B /* Assets.xcassets */; };
 		0E9219EB250F800300CD001B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219EA250F800300CD001B /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCourseListTableViewCell.swift; sourceTree = "<group>"; };
 		0E9219DE250F800100CD001B /* fypApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fypApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9219E1250F800100CD001B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E9219E7250F800300CD001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				0E9219EC250F800300CD001B /* LaunchScreen.storyboard */,
 				0E9219EF250F800300CD001B /* Info.plist */,
 				0E9219E9250F800300CD001B /* Preview Content */,
+				0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */,
 			);
 			path = fypApp;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				0E97509D251898C8000711ED /* Classroom.swift in Sources */,
 				0E921A0C250F8F1500CD001B /* RootRouter.swift in Sources */,
 				0EBD255425189CBB000B0ADA /* Teacher.swift in Sources */,
+				0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */,
 				0E921A55250FAA8100CD001B /* TestViewController.swift in Sources */,
 				0E921A10250F91E500CD001B /* HomeViewController.swift in Sources */,
 				0E921A0E250F8F7100CD001B /* UIStoryBoard+Create.swift in Sources */,

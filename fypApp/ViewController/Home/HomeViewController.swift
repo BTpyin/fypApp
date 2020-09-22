@@ -8,28 +8,47 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var helloView: UIView!
+    @IBOutlet weak var contentView: UIView!
     
     var rootRouter: RootRouter? {
        return router as? RootRouter
      }
     
+//    override func viewDidLayoutSubviews() {
+//       super.viewDidLayoutSubviews()
+//      scrollView.contentSize = CGSize(width: scrollView.frame.width, height: (helloView.frame.height + tableView.frame.height) )
+//
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
 
+ 
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return 5
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cellIdentifier = "HomeCourseListTableViewCell"
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeCourseListTableViewCell else {
+        fatalError("The dequeued cell is not an instance of HomeCourseListTableViewCell.")
+      }
+        return cell
+    }
+    
     @IBAction func buttonClicked(_ sender: Any) {
         rootRouter?.showTest()
     }
