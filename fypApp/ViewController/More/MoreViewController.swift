@@ -8,27 +8,45 @@
 
 import UIKit
 
-class MoreViewController: BaseViewController {
+class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    var viewModel : MoreViewModel?
+    @IBOutlet weak var tableView: UITableView!
+    
     var rootRouter: RootRouter? {
       return router as? RootRouter
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel = MoreViewModel()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.settingContentList.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cellIdentifier = "SettingTableViewCell"
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SettingTableViewCell else {
+        fatalError("The dequeued cell is not an instance of SettingTableViewCell.")
+      }
+        cell.settingLabel.text = viewModel?.settingContentList[indexPath.row]
+        return cell
+    }
 
+
+}
+
+class MoreViewModel{
+    var settingContentList = ["Profile","Terms","Logout"]
 }

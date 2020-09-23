@@ -46,8 +46,30 @@
                     <view key="view" contentMode="scaleToFill" id="86l-AP-4bC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-56-1yR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheduleImg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1UW-hH-hXq">
+                                        <rect key="frame" x="15" y="15" width="815" height="745"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1UW-hH-hXq" secondAttribute="bottom" constant="10" id="Yjz-M4-U2w"/>
+                                    <constraint firstAttribute="trailing" secondItem="1UW-hH-hXq" secondAttribute="trailing" id="tn2-fD-JiI"/>
+                                    <constraint firstItem="1UW-hH-hXq" firstAttribute="leading" secondItem="gAh-56-1yR" secondAttribute="leading" constant="15" id="tt4-Xd-pCv"/>
+                                    <constraint firstItem="1UW-hH-hXq" firstAttribute="top" secondItem="gAh-56-1yR" secondAttribute="top" constant="15" id="vef-Mu-g00"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7Al-Tr-Jl7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Al-Tr-Jl7" firstAttribute="bottom" secondItem="gAh-56-1yR" secondAttribute="bottom" id="60L-Hw-pCB"/>
+                            <constraint firstItem="gAh-56-1yR" firstAttribute="leading" secondItem="7Al-Tr-Jl7" secondAttribute="leading" id="WUF-02-XEB"/>
+                            <constraint firstItem="7Al-Tr-Jl7" firstAttribute="trailing" secondItem="gAh-56-1yR" secondAttribute="trailing" id="b8I-3n-9GE"/>
+                            <constraint firstItem="gAh-56-1yR" firstAttribute="top" secondItem="7Al-Tr-Jl7" secondAttribute="top" id="hDb-jB-5vY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="i9W-nb-Cqc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -105,8 +127,8 @@
                                                             <constraint firstAttribute="width" secondItem="gzd-Pa-r9u" secondAttribute="height" multiplier="1:1" id="SaL-jI-bqP"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Bowie Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGQ-EN-vCN">
-                                                        <rect key="frame" x="140" y="70.5" width="106" height="26.5"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Bowie Test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGQ-EN-vCN">
+                                                        <rect key="frame" x="140" y="70.5" width="246" height="26.5"/>
                                                         <viewLayoutGuide key="safeArea" id="AQz-lt-2V4"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                         <nil key="textColor"/>
@@ -122,6 +144,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="D74-sU-KzO" firstAttribute="leading" secondItem="gzd-Pa-r9u" secondAttribute="trailing" constant="20" id="1l0-4x-S4I"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rGQ-EN-vCN" secondAttribute="trailing" constant="20" id="P43-g5-ajL"/>
                                                     <constraint firstItem="rGQ-EN-vCN" firstAttribute="leading" secondItem="D74-sU-KzO" secondAttribute="leading" id="X5m-NK-MC2"/>
                                                     <constraint firstItem="gzd-Pa-r9u" firstAttribute="top" secondItem="jqH-We-2xZ" secondAttribute="top" constant="15" id="cma-sh-GhN"/>
                                                     <constraint firstItem="rGQ-EN-vCN" firstAttribute="bottom" secondItem="gzd-Pa-r9u" secondAttribute="bottom" constant="-8" id="k6o-m1-tQJ"/>
@@ -423,6 +446,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="scheduleImg" width="815" height="745"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
