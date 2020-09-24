@@ -22,10 +22,20 @@ class HomeCourseListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cellBaseView.roundCorners(cornerRadius: 20)
+//        cellBaseView.layer.applySketchShadow(
+//            color: .black,
+//            alpha: 0.4,
+//            x: 2,
+//            y: 2,
+//            blur: 2,
+//              spread: 0)
         cellBaseView.layer.shadowOffset = CGSize(width: 2, height: 5)
-        cellBaseView.layer.shadowColor = UIColor.init(white: 191/255, alpha: 1.0).cgColor
+        cellBaseView.layer.shadowColor = UIColor.init(white: 101/255, alpha: 1.0).cgColor
         cellBaseView.layer.shadowOpacity = 0.5
+        cellBaseView.layer.masksToBounds = false
         // Initialization code
+        cellBaseView.layer.shadowRadius = 5 / 2.0
+        cellBaseView.roundCorners(cornerRadius: 20)
         
     }
 

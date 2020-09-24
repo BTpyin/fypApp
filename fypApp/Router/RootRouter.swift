@@ -8,7 +8,11 @@
 import UIKit
 
 class RootRouter: Router{
-
+    
+    var moreNavigationController: UINavigationController? {
+        return RootMoreNavigationController() as? UINavigationController
+    }
+    
     func showStart(animated: Bool, complete: (() -> Void)? = nil ){
         guard
           let homeViewController = UIStoryboard.storyboard(.main).instantiateViewController(HomeViewController.self) else {
@@ -49,9 +53,21 @@ class RootRouter: Router{
             return
         }
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
+//        moreViewController.router = MoreRouter(moreNavigationController!)
         moreViewController.router = self
         //navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(moreViewController, animated: false)
+    }
+    
+    func showProfile(){
+        guard
+            let profileViewController = UIStoryboard.storyboard(.more).instantiateViewController(ProfileViewController.self) else {
+              return
+          }
+          
+        profileViewController.router = self
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.pushViewController(profileViewController, animated: true)
     }
     
     func showAttendance(){

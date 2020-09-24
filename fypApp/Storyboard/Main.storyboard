@@ -269,7 +269,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="1" green="0.93165868520736694" blue="0.87978774309158325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="1" green="0.99348312616348267" blue="0.91815930604934692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstItem="qag-XD-bCp" firstAttribute="top" secondItem="cTn-iR-CGW" secondAttribute="top" id="0co-Gy-Z1H"/>
                                                                         <constraint firstItem="ELa-IJ-Dkv" firstAttribute="top" secondItem="yi1-3u-eul" secondAttribute="top" id="45h-Fi-nHM"/>
@@ -302,6 +302,7 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="yi1-3u-eul" secondAttribute="bottom" constant="2" id="7XT-LJ-DM0"/>
                                                                 <constraint firstAttribute="leading" secondItem="yi1-3u-eul" secondAttribute="leading" id="KB8-F0-Gc9"/>

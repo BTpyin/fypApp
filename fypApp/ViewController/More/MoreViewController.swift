@@ -18,6 +18,11 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
       return router as? RootRouter
     }
     
+    var moreRouter : MoreRouter?{
+        return router as? MoreRouter
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MoreViewModel()
@@ -29,6 +34,9 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row == 0){
+            rootRouter?.showProfile()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
