@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4FEAC0252368AC001A6853 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4FEABF252368AC001A6853 /* RxRealm.framework */; };
 		0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */; };
 		0E5921C8251B9DAF0027CCD9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */; };
 		0E5921CB251CEE140027CCD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */; };
@@ -14,9 +15,6 @@
 		0E5921D1251CF8DD0027CCD9 /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D0251CF8DD0027CCD9 /* MoreRouter.swift */; };
 		0E5921D5252218FC0027CCD9 /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D4252218FC0027CCD9 /* AttendanceTableViewCell.swift */; };
 		0E5921D925221CB00027CCD9 /* AttendanceRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D825221CB00027CCD9 /* AttendanceRecordTableViewCell.swift */; };
-		0E5921E2252327510027CCD9 /* SyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E1252327510027CCD9 /* SyncData.swift */; };
-		0E5921E5252329FD0027CCD9 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E4252329FD0027CCD9 /* Api.swift */; };
-		0E5921E825234B6A0027CCD9 /* CMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E725234B6A0027CCD9 /* CMSResponse.swift */; };
 		0E9219E2250F800100CD001B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9219E1250F800100CD001B /* AppDelegate.swift */; };
 		0E9219E8250F800300CD001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219E7250F800300CD001B /* Assets.xcassets */; };
 		0E9219EB250F800300CD001B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219EA250F800300CD001B /* Preview Assets.xcassets */; };
@@ -51,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E4FEABF252368AC001A6853 /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCourseListTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -58,9 +57,7 @@
 		0E5921D0251CF8DD0027CCD9 /* MoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
 		0E5921D4252218FC0027CCD9 /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921D825221CB00027CCD9 /* AttendanceRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRecordTableViewCell.swift; sourceTree = "<group>"; };
-		0E5921E1252327510027CCD9 /* SyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncData.swift; sourceTree = "<group>"; };
-		0E5921E4252329FD0027CCD9 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		0E5921E725234B6A0027CCD9 /* CMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSResponse.swift; sourceTree = "<group>"; };
+		0E592221252365BC0027CCD9 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9219DE250F800100CD001B /* fypApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fypApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9219E1250F800100CD001B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E9219E7250F800300CD001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4FEAC0252368AC001A6853 /* RxRealm.framework in Frameworks */,
 				249D7B231B12396E438B6976 /* Pods_fypApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,9 +160,6 @@
 				0E9219EC250F800300CD001B /* LaunchScreen.storyboard */,
 				0E9219EF250F800300CD001B /* Info.plist */,
 				0E9219E9250F800300CD001B /* Preview Content */,
-				0E5921E1252327510027CCD9 /* SyncData.swift */,
-				0E5921E4252329FD0027CCD9 /* Api.swift */,
-				0E5921E725234B6A0027CCD9 /* CMSResponse.swift */,
 			);
 			path = fypApp;
 			sourceTree = "<group>";
@@ -284,6 +279,8 @@
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E4FEABF252368AC001A6853 /* RxRealm.framework */,
+				0E592221252365BC0027CCD9 /* Realm.framework */,
 				5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */,
 			);
 			name = Frameworks;
@@ -407,7 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E5921E2252327510027CCD9 /* SyncData.swift in Sources */,
 				0E5921D925221CB00027CCD9 /* AttendanceRecordTableViewCell.swift in Sources */,
 				0E921A5A2510AA9100CD001B /* ScheduleViewController.swift in Sources */,
 				0E921A5C2510AC8B00CD001B /* RootMoreNavigation Controller.swift in Sources */,
@@ -434,8 +430,6 @@
 				0E921A622510B04900CD001B /* RootAttendanceNavigationController.swift in Sources */,
 				0E9219FE250F834E00CD001B /* Router.swift in Sources */,
 				0E975091251368F2000711ED /* Course.swift in Sources */,
-				0E5921E5252329FD0027CCD9 /* Api.swift in Sources */,
-				0E5921E825234B6A0027CCD9 /* CMSResponse.swift in Sources */,
 				0E921A08250F85B000CD001B /* BaseViewController.swift in Sources */,
 				0E921A06250F846C00CD001B /* BaseNavigationController.swift in Sources */,
 				0E9219F9250F82DF00CD001B /* UIViewRoundCornerExtension.swift in Sources */,
