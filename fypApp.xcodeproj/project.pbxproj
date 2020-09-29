@@ -14,6 +14,9 @@
 		0E5921D1251CF8DD0027CCD9 /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D0251CF8DD0027CCD9 /* MoreRouter.swift */; };
 		0E5921D5252218FC0027CCD9 /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D4252218FC0027CCD9 /* AttendanceTableViewCell.swift */; };
 		0E5921D925221CB00027CCD9 /* AttendanceRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921D825221CB00027CCD9 /* AttendanceRecordTableViewCell.swift */; };
+		0E5921E2252327510027CCD9 /* SyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E1252327510027CCD9 /* SyncData.swift */; };
+		0E5921E5252329FD0027CCD9 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E4252329FD0027CCD9 /* Api.swift */; };
+		0E5921E825234B6A0027CCD9 /* CMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921E725234B6A0027CCD9 /* CMSResponse.swift */; };
 		0E9219E2250F800100CD001B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9219E1250F800100CD001B /* AppDelegate.swift */; };
 		0E9219E8250F800300CD001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219E7250F800300CD001B /* Assets.xcassets */; };
 		0E9219EB250F800300CD001B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9219EA250F800300CD001B /* Preview Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		0E5921D0251CF8DD0027CCD9 /* MoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
 		0E5921D4252218FC0027CCD9 /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921D825221CB00027CCD9 /* AttendanceRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRecordTableViewCell.swift; sourceTree = "<group>"; };
+		0E5921E1252327510027CCD9 /* SyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncData.swift; sourceTree = "<group>"; };
+		0E5921E4252329FD0027CCD9 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		0E5921E725234B6A0027CCD9 /* CMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSResponse.swift; sourceTree = "<group>"; };
 		0E9219DE250F800100CD001B /* fypApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fypApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9219E1250F800100CD001B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E9219E7250F800300CD001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				0E9219EC250F800300CD001B /* LaunchScreen.storyboard */,
 				0E9219EF250F800300CD001B /* Info.plist */,
 				0E9219E9250F800300CD001B /* Preview Content */,
+				0E5921E1252327510027CCD9 /* SyncData.swift */,
+				0E5921E4252329FD0027CCD9 /* Api.swift */,
+				0E5921E725234B6A0027CCD9 /* CMSResponse.swift */,
 			);
 			path = fypApp;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5921E2252327510027CCD9 /* SyncData.swift in Sources */,
 				0E5921D925221CB00027CCD9 /* AttendanceRecordTableViewCell.swift in Sources */,
 				0E921A5A2510AA9100CD001B /* ScheduleViewController.swift in Sources */,
 				0E921A5C2510AC8B00CD001B /* RootMoreNavigation Controller.swift in Sources */,
@@ -424,6 +434,8 @@
 				0E921A622510B04900CD001B /* RootAttendanceNavigationController.swift in Sources */,
 				0E9219FE250F834E00CD001B /* Router.swift in Sources */,
 				0E975091251368F2000711ED /* Course.swift in Sources */,
+				0E5921E5252329FD0027CCD9 /* Api.swift in Sources */,
+				0E5921E825234B6A0027CCD9 /* CMSResponse.swift in Sources */,
 				0E921A08250F85B000CD001B /* BaseViewController.swift in Sources */,
 				0E921A06250F846C00CD001B /* BaseNavigationController.swift in Sources */,
 				0E9219F9250F82DF00CD001B /* UIViewRoundCornerExtension.swift in Sources */,
