@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E31855825236B8500D74A47 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E31855725236B8500D74A47 /* RxRealm.framework */; };
 		0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */; };
 		0E5921C8251B9DAF0027CCD9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */; };
 		0E5921CB251CEE140027CCD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */; };
@@ -51,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E31855425236B2900D74A47 /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E31855725236B8500D74A47 /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCourseListTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E31855825236B8500D74A47 /* RxRealm.framework in Frameworks */,
 				249D7B231B12396E438B6976 /* Pods_fypApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +288,8 @@
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E31855725236B8500D74A47 /* RxRealm.framework */,
+				0E31855425236B2900D74A47 /* RxRealm.framework */,
 				5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */,
 			);
 			name = Frameworks;
