@@ -67,7 +67,6 @@ class SyncData {
             SyncData.writeRealmAsync({ (realm) in
               realm.delete(realm.objects(Student.self))
                 realm.add(Student().demoStudent())
-                Global.user.value = Student().demoStudent()
             }, completed:{
                 completed?(nil)
               })
@@ -77,11 +76,14 @@ class SyncData {
             SyncData.writeRealmAsync({ (realm) in
               realm.delete(realm.objects(Student.self))
                 realm.add(Student().demoStudent())
-                Global.user.value = Student().demoStudent()
+                
             }, completed:{
                 completed?(nil)
               })
             completed?(nil)
             
-          })    }
+          })
+        Global.user.value = Student().demoStudent()
+        
+    }
 }

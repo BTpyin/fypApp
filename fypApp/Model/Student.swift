@@ -47,7 +47,7 @@ class Student: Object, Mappable{
         demo.studentId = "33334444"
         demo.firstName = "Bow"
         demo.lastName = "demo"
-        demo.displayName = "BOWJai"
+        demo.displayName = "BOWJai123"
         demo.major = "INFE"
         demo.program = "EE"
         demo.scheduleLink = "https://img.eservice-hk.net/upload/2017/09/01/173055_b87ec340704d636378db12dfeaf8a970.png"

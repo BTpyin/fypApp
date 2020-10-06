@@ -7,28 +7,28 @@
 //
 
 import UIKit
+import RealmSwift
+import RxSwift
+import Kingfisher
 
 class ScheduleViewController: BaseViewController {
 
+    @IBOutlet weak var scheduleImageView: UIImageView!
     var rootRouter: RootRouter? {
        return router as? RootRouter
      }
-    
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Global.user.asObservable().subscribe(onNext: { student in
+            
+            self.uiBind(student: Global.user.value!)
+          }).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func uiBind(student: Student){
+        scheduleImageView.kf.setImage(with: URL(string: student.scheduleLink!))
     }
-    */
 
 }

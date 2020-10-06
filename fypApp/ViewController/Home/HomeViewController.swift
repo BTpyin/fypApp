@@ -25,7 +25,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
      }
     
     var disposeBag = DisposeBag()
-    var viewModel = HomeViewModel()
+    var viewModel  = HomeViewModel()
 //    override func viewDidLayoutSubviews() {
 //       super.viewDidLayoutSubviews()
 //      scrollView.contentSize = CGSize(width: scrollView.frame.width, height: (helloView.frame.height + tableView.frame.height) )
@@ -42,6 +42,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
               print(failReason)
 
         }
+
     }
     
     override func viewDidLoad() {
@@ -50,9 +51,11 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
 
         
+        uiBind(student: Global.user.value)
+        
         Global.user.asObservable().subscribe(onNext: { student in
-            
-            self.uiBind(student: (try? Realm().objects(Student.self))?.first)
+
+            self.uiBind(student: Global.user.value)
           }).disposed(by: disposeBag)
 
  
@@ -84,6 +87,9 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 
 class HomeViewModel{
     
+//    init(){
+//        Global.user.value = try? Realm().objects(Student.self).first
+//    }
 
     func getStudent(sid: String,completed: ((SyncDataFailReason?) -> Void)?){
       SyncData().syncStudent(sid: sid, completed: completed)
