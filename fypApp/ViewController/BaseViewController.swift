@@ -83,6 +83,26 @@ class BaseViewController: UIViewController {
 //                    okClicked: okClicked)
 //        }
 //      }
+    func showErrorAlert(reason: SyncDataFailReason? = nil,
+                        showCache: Bool = false,
+                        okClicked: ((UIAlertAction) -> Void)? = nil) {
+      if reason == .network {
+        if showCache {
+          showAlert("Network_error_show_cache",
+                    okClicked: okClicked)
+        } else {
+          showAlert("Network_error",
+                    okClicked: okClicked)
+        }
+      } else if reason == .other ||
+        reason == .realmWrite ||
+        reason == nil {
+        showAlert("Error",
+                  okClicked: okClicked)
+      }
+    }
+
+    
     
     func showAlert(_ title: String?, okClicked: ((UIAlertAction) -> Void)? = nil) {
       let alertVC = UIAlertController.init(title: title, message: nil, preferredStyle: .alert)

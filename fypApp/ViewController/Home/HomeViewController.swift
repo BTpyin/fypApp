@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RealmSwift
 
 class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,24 +19,49 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var displayNameLabel: UILabel!
     var rootRouter: RootRouter? {
        return router as? RootRouter
      }
     
+    var disposeBag = DisposeBag()
+    var viewModel = HomeViewModel()
 //    override func viewDidLayoutSubviews() {
 //       super.viewDidLayoutSubviews()
 //      scrollView.contentSize = CGSize(width: scrollView.frame.width, height: (helloView.frame.height + tableView.frame.height) )
 //
 //    }
+    override func loadView() {
+        super.loadView()
+        viewModel.getStudent(sid: "33334444"){ [weak self] (failReason) in
+            if let tempUser = try? Realm().objects(Student.self){
+//                Global.user.value = tempUser.first
+            }else{
+                self?.showErrorAlert(reason: failReason, showCache: true, okClicked: nil)
+               }
+              print(failReason)
+
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
 
+        
+        Global.user.asObservable().subscribe(onNext: { student in
+            
+            self.uiBind(student: (try? Realm().objects(Student.self))?.first)
+          }).disposed(by: disposeBag)
+
  
         
         // Do any additional setup after loading the view.
+    }
+    
+    func uiBind(student: Student?){
+        displayNameLabel.text = student?.displayName
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,4 +80,12 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         rootRouter?.showTest()
     }
 
+}
+
+class HomeViewModel{
+    
+
+    func getStudent(sid: String,completed: ((SyncDataFailReason?) -> Void)?){
+      SyncData().syncStudent(sid: sid, completed: completed)
+    }
 }

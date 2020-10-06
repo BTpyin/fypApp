@@ -41,6 +41,10 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return 3
     }

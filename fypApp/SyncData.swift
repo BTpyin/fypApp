@@ -50,4 +50,38 @@ class SyncData {
         }
       }
     }
+    
+    func failReason(error: Error?, resposne: Any?) -> SyncDataFailReason {
+      if let error = error as NSError?, error.domain == NSURLErrorDomain {
+        return .network
+      }
+      return .other
+    }
+    
+    func syncStudent(sid: String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().getStudentInfo(sid: sid, success: {(response) in
+            guard let student = response else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Student.self))
+                realm.add(Student().demoStudent())
+                Global.user.value = Student().demoStudent()
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Student.self))
+                realm.add(Student().demoStudent())
+                Global.user.value = Student().demoStudent()
+            }, completed:{
+                completed?(nil)
+              })
+            completed?(nil)
+            
+          })    }
 }

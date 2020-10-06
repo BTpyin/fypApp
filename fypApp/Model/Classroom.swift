@@ -17,7 +17,7 @@ class Classroom: Object, Mappable{
     @objc dynamic var currentCourse : CourseBriefObject?
     @objc dynamic var currentTeacherId: String?
     @objc dynamic var currentTeacher : String?
-    @objc dynamic var currentStudentList : [Student]?
+    var currentStudentList = List<Student>()
     
     
     required convenience init?(map: Map) {
@@ -28,8 +28,15 @@ class Classroom: Object, Mappable{
         classroomId <- map["classroomId"]
         classroomName <- map["classroomName"]
         currentCourse <- map["currentCourse"]
-        currentStudentList <- map["currentStudentList"]
         currentTeacher <- map["currentTeacher"]
         currentTeacherId <- map["currentTeacherId"]
+        
+        var currentStudentList: [Student]?
+        currentStudentList <- map["currentStudentList"]
+        if let currentStudentList = currentStudentList {
+          for currentStudentList in currentStudentList {
+            self.currentStudentList.append(currentStudentList)
+          }
+        }
     }
 }

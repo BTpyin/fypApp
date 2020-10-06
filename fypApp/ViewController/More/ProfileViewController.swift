@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RealmSwift
 
 class ProfileViewController: BaseViewController {
 
@@ -28,14 +30,21 @@ class ProfileViewController: BaseViewController {
     var rootRouter: RootRouter? {
       return router as? RootRouter
     }
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiBind()
+        
+        uiBind(student: Global.user.value!)
         // Do any additional setup after loading the view.
+        Global.user.asObservable().subscribe(onNext: { student in
+            
+            self.uiBind(student: Global.user.value!)
+          }).disposed(by: disposeBag)
+        
     }
     
-    func uiBind(){
+    func uiBind(student: Student){
         profileView.roundCorners(cornerRadius: 25)
         profileView.layer.applySketchShadow(
           color: .black,
@@ -52,6 +61,15 @@ class ProfileViewController: BaseViewController {
         sidTextField.roundCorners(cornerRadius: 10)
         programTextField.roundCorners(cornerRadius: 10)
         majorTextField.roundCorners(cornerRadius: 10)
+        
+        firstNameTextField.text = student.firstName
+        lastNameTextField.text = student.lastName
+        displayNameTextField.text = student.displayName
+        sidTextField.text = student.studentId
+        programTextField.text = student.program
+        majorTextField.text = student.major
+        
+        
     }
     /*
     // MARK: - Navigation

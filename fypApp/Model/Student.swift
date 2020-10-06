@@ -19,7 +19,7 @@ class Student: Object, Mappable{
     @objc dynamic var program : String?
     @objc dynamic var major : String?
     @objc dynamic var scheduleLink : String?
-    @objc dynamic var weekRecord: [Class]?
+    var weekRecord = List<Class>()
     
     required convenience init?(map: Map) {
       self.init()
@@ -33,7 +33,25 @@ class Student: Object, Mappable{
         program <- map["program"]
         major <- map["major"]
         scheduleLink <- map["scheduleLink"]
+        var weekRecord: [Class]?
         weekRecord <- map["weekRecord"]
+        if let weekRecord = weekRecord {
+          for weekRecord in weekRecord {
+            self.weekRecord.append(weekRecord)
+          }
+        }
+    }
+    
+    func demoStudent()->Student{
+        var demo = Student()
+        demo.studentId = "33334444"
+        demo.firstName = "Bow"
+        demo.lastName = "demo"
+        demo.displayName = "BOWJai"
+        demo.major = "INFE"
+        demo.program = "EE"
+        demo.scheduleLink = "https://img.eservice-hk.net/upload/2017/09/01/173055_b87ec340704d636378db12dfeaf8a970.png"
+        return demo
     }
     
 

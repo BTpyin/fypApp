@@ -16,7 +16,7 @@ class Course: Object, Mappable{
     @objc dynamic var courseCode : String?
     @objc dynamic var name : String?
     @objc dynamic var credit : Int = 0
-    @objc dynamic var classes : [Class]?
+    var classes = List<Class>()
 
     
     required convenience init?(map: Map) {
@@ -27,7 +27,13 @@ class Course: Object, Mappable{
         courseCode <- map["courseCode"]
         name <- map["name"]
         credit <- map["credit"]
+        var classes: [Class]?
         classes <- map["classes"]
+        if let classes = classes {
+          for classes in classes {
+            self.classes.append(classes)
+          }
+        }
     }
     
 

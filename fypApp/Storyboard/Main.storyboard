@@ -367,6 +367,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="contentView" destination="ick-9q-yxY" id="Z6s-qF-J0Q"/>
+                        <outlet property="displayNameLabel" destination="rGQ-EN-vCN" id="7Hu-MU-iGu"/>
                         <outlet property="helloView" destination="jqH-We-2xZ" id="oPX-vy-fuX"/>
                         <outlet property="scrollView" destination="JBZ-cw-IYq" id="QgK-mR-KwE"/>
                         <outlet property="tableView" destination="J8Q-jd-D6O" id="zsH-Se-g3C"/>

@@ -12,7 +12,7 @@ import ObjectMapper
 
 class Beacon: Object, Mappable{
     
-    @objc dynamic var uuid : UUID?
+    @objc dynamic var uuid : String?
     @objc dynamic var major : String?
     @objc dynamic var minor : String?
     @objc dynamic var classroomId : String?

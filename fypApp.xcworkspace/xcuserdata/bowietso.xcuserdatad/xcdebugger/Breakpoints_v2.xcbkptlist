@@ -52,5 +52,149 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5C76B47-CFD5-4EB8-A0E1-066DDC169234"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "loadView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23FC978B-878B-4BD0-B2CA-792C086C74B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/SyncData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "syncStudent(sid:completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "23FC978B-878B-4BD0-B2CA-792C086C74B2 - 1b5fb5efd6a4f61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Realm) -&gt; () in closure #2 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;fypApp.CMSResponse&lt;fypApp.Student&gt;&gt;) -&gt; () in fypApp.SyncData.syncStudent(sid: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/SyncData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "23FC978B-878B-4BD0-B2CA-792C086C74B2 - fcf6142bf1f61686"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #2 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;fypApp.CMSResponse&lt;fypApp.Student&gt;&gt;) -&gt; () in fypApp.SyncData.syncStudent(sid: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/SyncData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C99E70B-F769-4B27-BBAD-F7DC87D36233"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/SyncData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "syncStudent(sid:completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "683E0837-8F7E-4D2B-9C7B-1722C3A4BD6F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/SyncData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "syncStudent(sid:completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "683E0837-8F7E-4D2B-9C7B-1722C3A4BD6F - 1f7cf8848f1c973d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Realm) -&gt; () in closure #1 (Swift.Optional&lt;fypApp.Student&gt;) -&gt; () in fypApp.SyncData.syncStudent(sid: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/SyncData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "683E0837-8F7E-4D2B-9C7B-1722C3A4BD6F - 7ca9db982e746b19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 (Swift.Optional&lt;fypApp.Student&gt;) -&gt; () in fypApp.SyncData.syncStudent(sid: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/SyncData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0F3A24F-AEA8-4E41-998E-23F81359BA15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
