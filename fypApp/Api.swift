@@ -108,9 +108,34 @@ class Api {
     
     func getStudentInfo(sid:String, success: @escaping (_ payload: Student?) -> Void,
                         fail: @escaping (_ error: Error?, CMSResponse<Student>?) -> Void) {
-         get("\(Api.requestBasePath)getAboutVTC\(sid)",
+         get("\(Api.requestBasePath)getStudentInfo\(sid)",
            responseClass: CMSResponse<Student>.self,
            success: success, fail: fail
          )
-       }
+    }
+    
+    func getCourseDetail(courseId:String, success: @escaping (_ payload: Course?) -> Void,
+                         fail: @escaping (_ error: Error?, CMSResponse<Course>?) -> Void){
+        get("\(Api.requestBasePath)getCourseDetail\(courseId)",
+          responseClass: CMSResponse<Course>.self,
+          success: success, fail: fail
+        )
+    }
+    
+    func getClassroomInfo(classroomId:String, success: @escaping (_ payload: Classroom?) -> Void,
+                          fail: @escaping (_ error: Error?, CMSResponse<Classroom>?) -> Void){
+        get("\(Api.requestBasePath)getClassroomInfo\(classroomId)",
+          responseClass: CMSResponse<Classroom>.self,
+          success: success, fail: fail
+        )
+    }
+    
+    func getBeaconRepresent(uuid:String, success: @escaping (_ payload: Beacon?) -> Void,
+                          fail: @escaping (_ error: Error?, CMSResponse<Beacon>?) -> Void){
+        get("\(Api.requestBasePath)getBeaconRepresent\(uuid)",
+          responseClass: CMSResponse<Beacon>.self,
+          success: success, fail: fail
+        )
+    }
+    
 }
