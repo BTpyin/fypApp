@@ -10,13 +10,23 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    
+    var rootRouter: RootRouter? {
+       return router as? RootRouter
+     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func loginClicked(_ sender: Any) {
+        rootRouter?.showHome(animated: true)
+        
+    }
     /*
     // MARK: - Navigation
 

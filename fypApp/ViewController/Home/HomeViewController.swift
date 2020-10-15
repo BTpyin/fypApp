@@ -20,6 +20,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var displayNameLabel: UILabel!
+    
     var rootRouter: RootRouter? {
        return router as? RootRouter
      }
@@ -49,8 +50,8 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
-        
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
         uiBind(student: Global.user.value)
         
         Global.user.asObservable().subscribe(onNext: { student in

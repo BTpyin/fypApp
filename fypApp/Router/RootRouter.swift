@@ -13,7 +13,43 @@ class RootRouter: Router{
         return RootMoreNavigationController() as? UINavigationController
     }
     
-    func showStart(animated: Bool, complete: (() -> Void)? = nil ){
+    func showStart(){
+        guard
+          let startViewController = UIStoryboard.storyboard(.login).instantiateViewController(StartViewController.self) else {
+            return
+        }
+
+        startViewController.router = self
+        startViewController.modalPresentationStyle = .fullScreen
+        startViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(startViewController, animated: false)
+    }
+    
+    func showLogin(){
+        guard
+          let loginViewController = UIStoryboard.storyboard(.login).instantiateViewController(LoginViewController.self) else {
+            return
+        }
+
+        loginViewController.router = self
+        loginViewController.hidesBottomBarWhenPushed = true
+        loginViewController.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(loginViewController, animated: false)
+    }
+    
+    func showSignIn(){
+        guard
+          let signInViewController = UIStoryboard.storyboard(.login).instantiateViewController(SignInViewController.self) else {
+            return
+        }
+
+        signInViewController.router = self
+        signInViewController.hidesBottomBarWhenPushed = true
+        signInViewController.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(signInViewController, animated: false)
+    }
+    
+    func showHome(animated: Bool, complete: (() -> Void)? = nil ){
         guard
           let homeViewController = UIStoryboard.storyboard(.main).instantiateViewController(HomeViewController.self) else {
             return
@@ -22,6 +58,8 @@ class RootRouter: Router{
         homeViewController.router = self
         //navigationController?.setNavigationBarHidden(true, animated: animated)
         homeViewController.modalPresentationStyle = .fullScreen
+        homeViewController.navigationController?.navigationBar.backItem?.hidesBackButton = true
+        homeViewController.hidesBottomBarWhenPushed = false
         navigationController?.pushViewController(homeViewController, animated: false)
     }
 

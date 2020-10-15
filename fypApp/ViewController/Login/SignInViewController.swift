@@ -10,13 +10,21 @@ import UIKit
 
 class SignInViewController: BaseViewController {
 
+    @IBOutlet weak var signInButton: UIButton!
+    var rootRouter: RootRouter? {
+       return router as? RootRouter
+     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func signInClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
