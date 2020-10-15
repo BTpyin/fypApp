@@ -11,6 +11,7 @@ extension UIStoryboard {
         case main = "Main"
         case more = "More"
         case attend = "Attendance"
+        case login = "Login"
     }
 
  static func storyboard(_ storyboard: Storyboard) -> UIStoryboard {
