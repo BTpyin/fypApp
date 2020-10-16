@@ -34,7 +34,7 @@ class RootRouter: Router{
         loginViewController.router = self
         loginViewController.hidesBottomBarWhenPushed = true
         loginViewController.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(loginViewController, animated: false)
+        navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     func showSignIn(){
@@ -46,7 +46,7 @@ class RootRouter: Router{
         signInViewController.router = self
         signInViewController.hidesBottomBarWhenPushed = true
         signInViewController.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(signInViewController, animated: false)
+        navigationController?.pushViewController(signInViewController, animated: true)
     }
     
     func showHome(animated: Bool, complete: (() -> Void)? = nil ){

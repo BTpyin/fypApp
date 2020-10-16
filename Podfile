@@ -8,6 +8,7 @@ target 'fypApp' do
 	pod 'ObjectMapper', '~> 3.3'
 	pod 'AlamofireObjectMapper', '~> 5.0'
 	pod 'RealmSwift'
+	pod 'Firebase/Analytics'
 	pod 'RxSwift',    '~> 4.0'
 	pod 'RxCocoa',    '~> 4.0'
 	pod 'RxRealm'
