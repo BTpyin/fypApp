@@ -32,7 +32,7 @@ class RootRouter: Router{
         }
 
         loginViewController.router = self
-        loginViewController.hidesBottomBarWhenPushed = true
+//        loginViewController.hidesBottomBarWhenPushed = true
         loginViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(loginViewController, animated: true)
     }
@@ -44,7 +44,7 @@ class RootRouter: Router{
         }
 
         signInViewController.router = self
-        signInViewController.hidesBottomBarWhenPushed = true
+//        signInViewController.hidesBottomBarWhenPushed = true
         signInViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(signInViewController, animated: true)
     }
@@ -57,8 +57,8 @@ class RootRouter: Router{
         //        let homeNavigationController = BaseNavigationController.init(rootViewController: homeViewController)
         homeViewController.router = self
         //navigationController?.setNavigationBarHidden(true, animated: animated)
-        homeViewController.modalPresentationStyle = .fullScreen
-        homeViewController.navigationController?.navigationBar.backItem?.hidesBackButton = true
+//        homeViewController.modalPresentationStyle = .fullScreen
+        homeViewController.navigationController?.navigationBar.backItem?.hidesBackButton = false
         homeViewController.hidesBottomBarWhenPushed = false
         navigationController?.pushViewController(homeViewController, animated: false)
     }

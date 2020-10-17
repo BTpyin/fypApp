@@ -36,6 +36,8 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
       tableView.deselectRow(at: indexPath, animated: true)
         if (indexPath.row == 0){
             rootRouter?.showProfile()
+        }else if(indexPath.row == 2){
+                logout()
         }
     }
     
@@ -50,6 +52,14 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
       }
         cell.settingLabel.text = viewModel?.settingContentList[indexPath.row]
         return cell
+    }
+    
+    func logout(){
+        UserDefaults.standard.set(false, forKey: "loggedIn")
+        self.navigationController?.popToRootViewController(animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
     }
 
 

@@ -24,8 +24,10 @@ class LoginViewController: BaseViewController {
     
 
     @IBAction func loginClicked(_ sender: Any) {
-        rootRouter?.showHome(animated: true)
-        
+        UserDefaults.standard.set(true, forKey: "loggedIn")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
     }
     /*
     // MARK: - Navigation

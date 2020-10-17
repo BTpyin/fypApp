@@ -28,6 +28,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.leftItemsSupplementBackButton = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = UIColor.white
     }
     
 //    override func viewWillAppear(_ animated: Bool) {

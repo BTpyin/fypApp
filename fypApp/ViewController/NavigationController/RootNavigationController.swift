@@ -15,7 +15,11 @@ var router: RootRouter?
     override func viewDidLoad() {
        super.viewDidLoad()
        router = RootRouter(self)
-       router?.showStart()
+        if(UserDefaults.standard.bool(forKey: "loggedIn")){
+            router?.showHome(animated: true)
+        }else{
+            router?.showStart()
+        }
         // Do any additional setup after loading the view.
     }
     

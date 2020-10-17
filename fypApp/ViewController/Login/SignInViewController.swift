@@ -8,9 +8,14 @@
 
 import UIKit
 
-class SignInViewController: BaseViewController {
+class SignInViewController: BaseViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var sidTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var reEnterTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    
     var rootRouter: RootRouter? {
        return router as? RootRouter
      }
@@ -18,21 +23,35 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sidTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        reEnterTextField.delegate = self
+        self.navigationItem.title = "Register"
         // Do any additional setup after loading the view.
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField{
+        case sidTextField : emailTextField.becomeFirstResponder()
+            break
+        case emailTextField : passwordTextField.becomeFirstResponder()
+        case passwordTextField: reEnterTextField.becomeFirstResponder()
+        case reEnterTextField: reEnterTextField.resignFirstResponder()
+        default:
+            break
+        }
+        return true
+    }
 
     @IBAction func signInClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
-    */
-
 }
