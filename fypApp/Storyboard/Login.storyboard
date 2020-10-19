@@ -275,23 +275,25 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jn-xg-OC4">
                                         <rect key="frame" x="20" y="80" width="314" height="34"/>
+                                        <color key="textColor" red="0.37684822082519531" green="0.37588620185852051" blue="0.40221792459487915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weI-ew-czH">
                                         <rect key="frame" x="20" y="134" width="314" height="34"/>
+                                        <color key="textColor" red="0.37684822082519531" green="0.37588620185852051" blue="0.40221792459487915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="email"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-at-SUu">
-                                        <rect key="frame" x="20" y="188" width="314" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xs4-Sb-1ar">
                                         <rect key="frame" x="20" y="242" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-at-SUu">
+                                        <rect key="frame" x="20" y="188" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhE-37-0BY">
                                         <rect key="frame" x="97" y="306" width="160" height="45"/>
@@ -335,7 +337,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="PPs-1P-ieE" firstAttribute="top" secondItem="3Qp-53-UXE" secondAttribute="top" constant="20" id="07Y-gE-dng"/>
                                     <constraint firstItem="2jn-xg-OC4" firstAttribute="leading" secondItem="3Qp-53-UXE" secondAttribute="leading" constant="20" id="68W-wT-5nU"/>
@@ -369,7 +371,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="60O-qw-siH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="60O-qw-siH" firstAttribute="trailing" secondItem="3Qp-53-UXE" secondAttribute="trailing" constant="30" id="Lej-BH-OrI"/>
                             <constraint firstItem="3Qp-53-UXE" firstAttribute="centerY" secondItem="9Qv-BE-Wt1" secondAttribute="centerY" id="U9c-7j-3G7"/>
@@ -377,6 +379,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonBackgroundView" destination="lhE-37-0BY" id="x3B-aN-LWK"/>
+                        <outlet property="buttonLine" destination="BwN-f9-Ant" id="9vI-39-ilq"/>
                         <outlet property="emailTextField" destination="weI-ew-czH" id="3R4-XV-3u0"/>
                         <outlet property="passwordTextField" destination="RLt-at-SUu" id="r4F-oB-0We"/>
                         <outlet property="reEnterTextField" destination="Xs4-Sb-1ar" id="W4a-ir-tEi"/>

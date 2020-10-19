@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E31855825236B8500D74A47 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E31855725236B8500D74A47 /* RxRealm.framework */; };
 		0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */; };
 		0E5921C8251B9DAF0027CCD9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */; };
 		0E5921CB251CEE140027CCD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */; };
@@ -52,6 +51,8 @@
 		0EA963E425388B6E00FFD45F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA963E325388B6E00FFD45F /* LoginViewController.swift */; };
 		0EA963E725388B8400FFD45F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA963E625388B8400FFD45F /* SignInViewController.swift */; };
 		0EA963EE2539F53700FFD45F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA963ED2539F53700FFD45F /* GoogleService-Info.plist */; };
+		0EA96434253D9A5000FFD45F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA96433253D9A5000FFD45F /* RealmSwift.framework */; };
+		0EA9644E253D9B2000FFD45F /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA9644D253D9B2000FFD45F /* RxRealm.framework */; };
 		0EB9FF03252CAFF4007C3AFA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9FF02252CAFF4007C3AFA /* Global.swift */; };
 		0EB9FF0625386AEC007C3AFA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB9FF0525386AEC007C3AFA /* Login.storyboard */; };
 		0EBD255425189CBB000B0ADA /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD255325189CBB000B0ADA /* Teacher.swift */; };
@@ -107,6 +108,8 @@
 		0EA963E325388B6E00FFD45F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0EA963E625388B8400FFD45F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0EA963ED2539F53700FFD45F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EA96433253D9A5000FFD45F /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA9644D253D9B2000FFD45F /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB9FF02252CAFF4007C3AFA /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0EB9FF0525386AEC007C3AFA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0EBD255325189CBB000B0ADA /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
@@ -120,7 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E31855825236B8500D74A47 /* RxRealm.framework in Frameworks */,
+				0EA9644E253D9B2000FFD45F /* RxRealm.framework in Frameworks */,
+				0EA96434253D9A5000FFD45F /* RealmSwift.framework in Frameworks */,
 				249D7B231B12396E438B6976 /* Pods_fypApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +321,8 @@
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EA9644D253D9B2000FFD45F /* RxRealm.framework */,
+				0EA96433253D9A5000FFD45F /* RealmSwift.framework */,
 				0E31855725236B8500D74A47 /* RxRealm.framework */,
 				0E31855425236B2900D74A47 /* RxRealm.framework */,
 				5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */,
