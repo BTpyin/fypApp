@@ -137,6 +137,8 @@ class SignInViewController: BaseViewController, UITextFieldDelegate {
         
         viewModel?.sidInput.value = sidTextField.text
         viewModel?.emailInput.value = emailTextField.text
+        
+        Api().
         navigationController?.popViewController(animated: true)
     }
 
@@ -155,7 +157,7 @@ class SignInViewModel{
     var signInEnable = Variable<Bool>(false)
     
     func enableCheck(){
-        if(sidInput.value != "" && passwordInput.value != "" && reInputPassword.value != "" && emailInput.value != ""){
+        if(sidInput.value != "" && sidInput.value?.count == 8 && passwordInput.value != "" && reInputPassword.value != "" && emailInput.value != ""){
             signInEnable.value = true
         }
         else{

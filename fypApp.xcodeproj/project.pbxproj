@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4E9867254426F200B21257 /* SidValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E9866254426F200B21257 /* SidValid.swift */; };
 		0E5921BF251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */; };
 		0E5921C8251B9DAF0027CCD9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */; };
 		0E5921CB251CEE140027CCD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		0E31855425236B2900D74A47 /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E31855725236B8500D74A47 /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4E9866254426F200B21257 /* SidValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidValid.swift; sourceTree = "<group>"; };
 		0E5921BE251A45ED0027CCD9 /* HomeCourseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCourseListTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921C7251B9DAF0027CCD9 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		0E5921CA251CEE130027CCD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				0E9750942518988B000711ED /* Beacon.swift */,
 				0E97509A251898C8000711ED /* Classroom.swift */,
 				0EBD255325189CBB000B0ADA /* Teacher.swift */,
+				0E4E9866254426F200B21257 /* SidValid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				0E9219E2250F800100CD001B /* AppDelegate.swift in Sources */,
 				0E97508F251364AD000711ED /* Student.swift in Sources */,
 				0EA963DD25386C7D00FFD45F /* UIViewExtension.swift in Sources */,
+				0E4E9867254426F200B21257 /* SidValid.swift in Sources */,
 				0E921A00250F83CE00CD001B /* TabBarController.swift in Sources */,
 				0E921A582510A9A100CD001B /* RootScheduleController.swift in Sources */,
 				0E5921CB251CEE140027CCD9 /* ProfileViewController.swift in Sources */,
