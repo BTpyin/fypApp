@@ -86,4 +86,42 @@ class SyncData {
         Global.user.value = Student().demoStudent()
         
     }
+    
+    func syncCourseDetail(courseId:String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().getCourseDetail(courseId: courseId, success: {(response) in
+            guard let course = response else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Course.self))
+                realm.add(course)
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+        })
+    }
+    
+    func syncClassroomInfo(classroomId:String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().getClassroomInfo(classroomId: classroomId, success: {(response) in
+            guard let classroom = response else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Classroom.self))
+                realm.add(classroom)
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+        })
+    }
+    
+    
 }
