@@ -20,8 +20,8 @@ class CMSResponse<T: Mappable>: Mappable {
     }
 
     func mapping(map: Map) {
-        success <- map["success"]
-        remarks  <- map["remarks"]
-        value   <- map["value"]
+        success <- map["Success"]
+        remarks  <- map["Remarks"]
+        value   <- map["Value"]
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -55,7 +57,15 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func logout(){
-        UserDefaults.standard.set(false, forKey: "loggedIn")
+        
+        do {
+            try Auth.auth().signOut()
+        }
+             catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+        }
+        
+        
         self.navigationController?.popToRootViewController(animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()

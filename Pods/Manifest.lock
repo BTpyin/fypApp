@@ -68,7 +68,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - GTMSessionFetcher/Core (1.4.0)
+  - GTMSessionFetcher/Core (1.5.0)
   - Kingfisher (4.10.1)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -138,7 +138,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
@@ -151,4 +151,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6e9f677dce0e61efd55dca50bb08e824226d53d0
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

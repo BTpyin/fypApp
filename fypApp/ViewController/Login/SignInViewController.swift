@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import FirebaseAuth
 
 class SignInViewController: BaseViewController, UITextFieldDelegate {
     
@@ -138,8 +139,41 @@ class SignInViewController: BaseViewController, UITextFieldDelegate {
         viewModel?.sidInput.value = sidTextField.text
         viewModel?.emailInput.value = emailTextField.text
         
-        Api().
-        navigationController?.popViewController(animated: true)
+        Api().checkSidValid(sid: (viewModel?.sidInput.value)!, success: {(response) in
+            guard let valid = response else{
+                self.showAlert("Fail to Register your Account")
+                return
+            }
+            
+            if (valid.valid){
+
+                Auth.auth().createUser(withEmail: (self.viewModel?.emailInput.value)!, password: (self.viewModel?.passwordInput.value)!){ (user, error) in
+                    if error == nil {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else{
+//                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+//                   let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//
+//                    alertController.addAction(defaultAction)
+//                    self.present(alertController, animated: true, completion: nil)
+                        self.showAlert(error?.localizedDescription)
+                        
+                    }
+                    
+                }
+                
+            }
+            else{
+                self.showAlert("Your Account had been Registered")
+            }
+            
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+//            let reason = self.failReason(error: error, resposne: resposne)
+            self.showAlert("Fail to Register your Account")
+        })
+//        navigationController?.popViewController(animated: true)
     }
 
 

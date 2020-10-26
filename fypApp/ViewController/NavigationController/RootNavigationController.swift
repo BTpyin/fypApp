@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class RootNavigationController: UINavigationController {
     
@@ -15,7 +17,7 @@ var router: RootRouter?
     override func viewDidLoad() {
        super.viewDidLoad()
        router = RootRouter(self)
-        if(UserDefaults.standard.bool(forKey: "loggedIn")){
+        if(Auth.auth().currentUser != nil){
             router?.showHome(animated: true)
         }else{
             router?.showStart()

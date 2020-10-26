@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class Api {
-  static let requestBasePath = "http://127.0.0.1:8000/catalog/api"
+  static let requestBasePath = "http://127.0.0.1:8000/catalog/api/"
 
 //  static let ReceiveApiErrorNotification = NSNotification.Name.init("ReceiveApiErrorNotification")
 //  static let ErrorCodeRemoteSignout = 214
@@ -40,7 +40,7 @@ class Api {
         .responseObject { (response: DataResponse<CMSResponse<U>>) in
           #if DEVELOPMENT
             print("🌏 Success: \(response.result.isSuccess)" +
-              "Request \(String(describing: response.request?.url)) " +
+                    "Request \(String(describing: response.request?.url)) " +
               "Err: \(String(describing: response.error)) ")
           #endif
           
@@ -137,5 +137,13 @@ class Api {
           success: success, fail: fail
         )
     }
+    
+    func checkSidValid(sid:String, success: @escaping (_ payload: SidValid?) -> Void,
+                       fail: @escaping (_ error: Error?, CMSResponse<SidValid>?) -> Void) {
+        get("\(Api.requestBasePath)checkSidValid/?sid=\(sid)",
+          responseClass: CMSResponse<SidValid>.self,
+          success: success, fail: fail
+        )
+   }
     
 }
