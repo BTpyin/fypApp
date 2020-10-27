@@ -27,12 +27,12 @@ class Student: Object, Mappable{
     
     func mapping(map: Map) {
         studentId <- map["studentId"]
-        firstName <- map["firstName"]
-        lastName <- map["lastName"]
-        displayName <- map["displayName"]
+        firstName <- map["first_name"]
+        lastName <- map["last_name"]
+        displayName <- map["display_name"]
         program <- map["program"]
         major <- map["major"]
-        scheduleLink <- map["scheduleLink"]
+        scheduleLink = "https://img.eservice-hk.net/upload/2017/09/01/173055_b87ec340704d636378db12dfeaf8a970.png"
         var weekRecord: [Class]?
         weekRecord <- map["weekRecord"]
         if let weekRecord = weekRecord {

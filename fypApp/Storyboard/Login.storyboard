@@ -153,10 +153,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeZ-eN-gUA">
-                                <rect key="frame" x="30" y="309" width="354" height="278"/>
+                                <rect key="frame" x="30" y="289.5" width="354" height="317"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9g-za-eiW">
-                                        <rect key="frame" x="20" y="80" width="314" height="34"/>
+                                        <rect key="frame" x="20" y="75" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     </textField>
@@ -166,13 +166,13 @@
                                         <color key="textColor" red="1" green="0.74117647060000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-mD-hei">
-                                        <rect key="frame" x="20" y="144" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-7L-oTb">
+                                        <rect key="frame" x="20" y="129" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-0A-57n">
-                                        <rect key="frame" x="97" y="208" width="160" height="45"/>
+                                        <rect key="frame" x="97" y="247" width="160" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-HB-Le0">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
@@ -212,20 +212,28 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-mD-hei">
+                                        <rect key="frame" x="20" y="183" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" textContentType="password"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="xcs-0A-57n" firstAttribute="centerX" secondItem="yeZ-eN-gUA" secondAttribute="centerX" id="3e1-pe-b97"/>
                                     <constraint firstAttribute="bottom" secondItem="xcs-0A-57n" secondAttribute="bottom" constant="25" id="3g4-h8-Wss"/>
-                                    <constraint firstItem="bzK-mD-hei" firstAttribute="top" secondItem="F9g-za-eiW" secondAttribute="bottom" constant="30" id="P5q-De-ybQ"/>
-                                    <constraint firstItem="F9g-za-eiW" firstAttribute="top" secondItem="JKD-Ri-Dfb" secondAttribute="bottom" constant="30" id="Q8y-Bb-XSI"/>
+                                    <constraint firstAttribute="trailing" secondItem="iHh-7L-oTb" secondAttribute="trailing" constant="20" id="9fr-eh-Yt0"/>
+                                    <constraint firstItem="bzK-mD-hei" firstAttribute="top" secondItem="iHh-7L-oTb" secondAttribute="bottom" constant="20" id="P5q-De-ybQ"/>
+                                    <constraint firstItem="F9g-za-eiW" firstAttribute="top" secondItem="JKD-Ri-Dfb" secondAttribute="bottom" constant="25" id="Q8y-Bb-XSI"/>
                                     <constraint firstAttribute="trailing" secondItem="bzK-mD-hei" secondAttribute="trailing" constant="20" id="ZJg-LN-htC"/>
                                     <constraint firstItem="bzK-mD-hei" firstAttribute="leading" secondItem="yeZ-eN-gUA" secondAttribute="leading" constant="20" id="g0M-iY-7pz"/>
                                     <constraint firstItem="JKD-Ri-Dfb" firstAttribute="top" secondItem="yeZ-eN-gUA" secondAttribute="top" constant="20" id="g4P-ee-QJm"/>
                                     <constraint firstAttribute="trailing" secondItem="F9g-za-eiW" secondAttribute="trailing" constant="20" id="l7m-if-I6D"/>
                                     <constraint firstItem="xcs-0A-57n" firstAttribute="top" secondItem="bzK-mD-hei" secondAttribute="bottom" constant="30" id="nhl-aH-mwj"/>
                                     <constraint firstItem="F9g-za-eiW" firstAttribute="leading" secondItem="yeZ-eN-gUA" secondAttribute="leading" constant="20" id="p3C-Qo-RvZ"/>
+                                    <constraint firstItem="iHh-7L-oTb" firstAttribute="leading" secondItem="yeZ-eN-gUA" secondAttribute="leading" constant="20" id="sLM-Wf-SvG"/>
                                     <constraint firstItem="JKD-Ri-Dfb" firstAttribute="centerX" secondItem="yeZ-eN-gUA" secondAttribute="centerX" id="wbj-yX-Qi2"/>
+                                    <constraint firstItem="iHh-7L-oTb" firstAttribute="top" secondItem="F9g-za-eiW" secondAttribute="bottom" constant="20" id="xiO-N1-rbR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -254,6 +262,7 @@
                         <outlet property="loginBottomLineView" destination="4oR-N7-RCn" id="BIK-Aq-5jm"/>
                         <outlet property="loginButton" destination="pU4-HB-Le0" id="HWa-WL-SJU"/>
                         <outlet property="passwordTextField" destination="bzK-mD-hei" id="j8R-6L-O7E"/>
+                        <outlet property="sidTextField" destination="iHh-7L-oTb" id="uPQ-H6-6WV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qN-h6-MQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

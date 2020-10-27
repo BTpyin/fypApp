@@ -106,9 +106,19 @@ class Api {
       }
     }
     
+    func updateDisplayName(name:String, sid: String, success: @escaping (_ payload: Student?) -> Void,
+                           fail: @escaping (_ error: Error?, CMSResponse<Student>?) -> Void) {
+        var postBody = Parameters()
+        postBody["display_name"] = name
+            post("\(Api.requestBasePath)updateDisplayName/\(sid)",
+                responseClass: CMSResponse<Student>.self, parameters: postBody,
+                success: success, fail: fail
+            )
+}
+    
     func getStudentInfo(sid:String, success: @escaping (_ payload: Student?) -> Void,
                         fail: @escaping (_ error: Error?, CMSResponse<Student>?) -> Void) {
-         get("\(Api.requestBasePath)getStudentInfo\(sid)",
+         get("\(Api.requestBasePath)getStudentInfo/\(sid)",
            responseClass: CMSResponse<Student>.self,
            success: success, fail: fail
          )

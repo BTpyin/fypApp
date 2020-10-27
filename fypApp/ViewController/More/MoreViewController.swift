@@ -65,7 +65,7 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     print ("Error signing out: %@", signOutError)
         }
         
-        
+        UserDefaults.standard.set("", forKey: "studentId")
         self.navigationController?.popToRootViewController(animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()

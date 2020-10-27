@@ -66,20 +66,20 @@ class SyncData {
             }
             SyncData.writeRealmAsync({ (realm) in
               realm.delete(realm.objects(Student.self))
-                realm.add(Student().demoStudent())
+                realm.add(student)
             }, completed:{
                 completed?(nil)
               })
         }, fail: { (error, resposne) in
             print("Reqeust Error: \(String(describing: error))")
             let reason = self.failReason(error: error, resposne: resposne)
-            SyncData.writeRealmAsync({ (realm) in
-              realm.delete(realm.objects(Student.self))
-                realm.add(Student().demoStudent())
-                
-            }, completed:{
-                completed?(nil)
-              })
+//            SyncData.writeRealmAsync({ (realm) in
+//              realm.delete(realm.objects(Student.self))
+//                realm.add(Student().demoStudent())
+//                
+//            }, completed:{
+//                completed?(nil)
+//              })
             completed?(nil)
             
           })
@@ -121,6 +121,34 @@ class SyncData {
             print("Reqeust Error: \(String(describing: error))")
             let reason = self.failReason(error: error, resposne: resposne)
         })
+    }
+    
+    func updateDisplayName(sid: String, name: String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().updateDisplayName(name: name, sid: sid, success: {(response) in
+            guard let student = response else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Student.self))
+                realm.add(student)
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+//            SyncData.writeRealmAsync({ (realm) in
+//              realm.delete(realm.objects(Student.self))
+//                realm.add(Student().demoStudent())
+//
+//            }, completed:{
+//                completed?(nil)
+//              })
+            completed?(nil)
+            
+          })
+        Global.user.value = Student().demoStudent()
     }
     
     

@@ -34,9 +34,9 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 //    }
     override func loadView() {
         super.loadView()
-        viewModel.getStudent(sid: "33334444"){ [weak self] (failReason) in
+        viewModel.getStudent(sid: UserDefaults.standard.string(forKey: "studentId")!){ [weak self] (failReason) in
             if let tempUser = try? Realm().objects(Student.self){
-//                Global.user.value = tempUser.first
+                Global.user.value = tempUser.first
             }else{
                 self?.showErrorAlert(reason: failReason, showCache: true, okClicked: nil)
                }

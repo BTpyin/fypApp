@@ -23,6 +23,10 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var sidTextField: UITextField!
     @IBOutlet weak var programTextField: UITextField!
     @IBOutlet weak var majorTextField: UITextField!
+    
+    var viewModel: ProfileViewModel?
+    
+    
     var moreRouter : MoreRouter?{
         return router as? MoreRouter
     }
@@ -34,8 +38,15 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = ProfileViewModel()
         uiBind(student: Global.user.value!)
+        
+        displayNameTextField.rx.text.orEmpty.asObservable()
+            .subscribe(onNext: {_ in
+                self.viewModel?.displayNameInput.value = self.displayNameTextField.text
+            })
+            .disposed(by: disposeBag)
+        
         // Do any additional setup after loading the view.
         Global.user.asObservable().subscribe(onNext: { student in
             
@@ -71,14 +82,31 @@ class ProfileViewController: BaseViewController {
         
         
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func updateClicked(_ sender: Any) {
+        viewModel?.updateDisplayName(updateName: (viewModel?.displayNameInput.value)!, sid: (Global.user.value?.studentId)!){[weak self] (failReason) in
+            if let tempUser = try? Realm().objects(Student.self){
+                Global.user.value = tempUser.first
+            }else{
+                self?.showErrorAlert(reason: failReason, showCache: true, okClicked: nil)
+               }
+              print(failReason)
+
+        }
     }
-    */
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
+    
+}
+
+class ProfileViewModel{
+    
+    var displayNameInput = Variable<String?>(nil)
+
+    func updateDisplayName(updateName: String, sid: String, completed: ((SyncDataFailReason?) -> Void)?){
+        SyncData().updateDisplayName(sid: sid, name: updateName, completed: completed)
+      }
 }

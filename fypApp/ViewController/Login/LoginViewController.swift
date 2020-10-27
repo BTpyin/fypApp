@@ -20,6 +20,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var sidTextField: UITextField!
     @IBOutlet weak var loginBackgroundView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -36,6 +37,14 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         self.navigationItem.title = "Login"
         configureUI()
+        
+        sidTextField.rx.text.orEmpty.asObservable()
+            .subscribe(onNext: {_ in
+                self.viewModel?.sidInput.value = self.sidTextField.text
+                self.viewModel?.enableCheck()
+            })
+            .disposed(by: disposeBag)
+        
         
         emailTextField.rx.text.orEmpty.asObservable()
             .subscribe(onNext: {_ in
@@ -68,7 +77,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func configureUI(){
-       
+        sidTextField.textColor = UIColor.init(red: 96,green: 96,blue: 96)
+        sidTextField.borderColor = UIColor.init(red: 168,green: 168,blue: 168)
         emailTextField.textColor = UIColor.init(red: 96,green: 96,blue: 96)
         emailTextField.borderColor = UIColor.init(red: 168,green: 168,blue: 168)
         passwordTextField.textColor = UIColor.init(red: 96,green: 96,blue: 96)
@@ -85,7 +95,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(withEmail: (viewModel?.emailInput.value)!, password: (viewModel?.passwordInput.value)!) { (user, error) in
             if error == nil {
-                UserDefaults.standard.set(true, forKey: "loggedIn")
+//                UserDefaults.standard.set(true, forKey: "loggedIn")
+                UserDefaults.standard.set(self.viewModel?.sidInput.value, forKey: "studentId")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let initial = storyboard.instantiateInitialViewController()
                 UIApplication.shared.keyWindow?.rootViewController = initial
@@ -100,25 +111,34 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             }
         }
     }
-    /*
-    // MARK: - Navigation
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField{
+        case sidTextField : emailTextField.becomeFirstResponder()
+            break
+        case emailTextField : passwordTextField.becomeFirstResponder()
+        case passwordTextField: passwordTextField.resignFirstResponder()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        default:
+            break
+        }
+        return true
     }
-    */
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
 }
 
 class LoginInViewModel{
+    var sidInput = Variable<String?>(nil)
     var emailInput = Variable<String?>(nil)
     var passwordInput = Variable<String?>(nil)
     var loginEnable = Variable<Bool>(false)
     
     func enableCheck(){
-        if(emailInput.value != "" && passwordInput.value != ""){
+        if(sidInput.value != "" && sidInput.value?.count == 8 && emailInput.value != "" && passwordInput.value != ""){
             loginEnable.value = true
         }
         else{
