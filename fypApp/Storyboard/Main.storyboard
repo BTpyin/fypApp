@@ -157,13 +157,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Taking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75b-sD-qHY">
-                                                <rect key="frame" x="33" y="128" width="151.5" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <rect key="frame" x="33" y="128" width="139.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8Q-jd-D6O">
-                                                <rect key="frame" x="10" y="165" width="394" height="633"/>
+                                                <rect key="frame" x="10" y="160.5" width="394" height="637.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -336,7 +336,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="jqH-We-2xZ" secondAttribute="trailing" id="V4s-ns-zQm"/>
                                             <constraint firstItem="jqH-We-2xZ" firstAttribute="leading" secondItem="ick-9q-yxY" secondAttribute="leading" id="Wkg-uF-5Z8"/>
                                             <constraint firstItem="jqH-We-2xZ" firstAttribute="top" secondItem="ick-9q-yxY" secondAttribute="topMargin" id="YQO-ZS-WPR"/>
-                                            <constraint firstItem="J8Q-jd-D6O" firstAttribute="top" secondItem="75b-sD-qHY" secondAttribute="bottom" constant="8" id="cSN-hL-Lu6"/>
+                                            <constraint firstItem="J8Q-jd-D6O" firstAttribute="top" secondItem="75b-sD-qHY" secondAttribute="bottom" constant="6" id="cSN-hL-Lu6"/>
                                             <constraint firstAttribute="trailing" secondItem="J8Q-jd-D6O" secondAttribute="trailing" constant="10" id="oqk-El-uvr"/>
                                         </constraints>
                                         <variation key="default">
