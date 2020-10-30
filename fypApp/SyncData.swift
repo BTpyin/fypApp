@@ -123,6 +123,24 @@ class SyncData {
         })
     }
     
+    func syncClassInfo(classId:String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().getClassInfo(classId: classId, success: {(response) in
+            guard let classObj = response else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+//              realm.delete(realm.objects(Classroom.self))
+                realm.add(classObj)
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+        })
+    }
+    
     func updateDisplayName(sid: String, name: String, completed:((SyncDataFailReason?) -> Void)?) {
         Api().updateDisplayName(name: name, sid: sid, success: {(response) in
             guard let student = response else {
@@ -150,6 +168,29 @@ class SyncData {
           })
         Global.user.value = Student().demoStudent()
     }
+    
+    func syncBeacons(completed:((SyncDataFailReason?) -> Void)?) {
+        Api().getBeaconRepresent(success: {(beaconPayload) in
+            guard let beacons = beaconPayload?.beaconList else {
+                completed?(nil)
+                return
+            }
+            SyncData.writeRealmAsync({ (realm) in
+              realm.delete(realm.objects(Beacon.self))
+                realm.add(beacons)
+            }, completed:{
+                completed?(nil)
+              })
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+
+            completed?(reason)
+            
+          })
+
+    
+}
     
     
 }

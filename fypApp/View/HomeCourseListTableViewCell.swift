@@ -18,6 +18,7 @@ class HomeCourseListTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,9 +40,19 @@ class HomeCourseListTableViewCell: UITableViewCell {
         
     }
 
-    func uiBind(class : Class){
+    func uiBind(classes : Class?){
         
-        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+        dateLabel.text = dateFormatterPrint.string(from: classes?.date ?? Date())
+        let dateFormatterTime = DateFormatter()
+        dateFormatterTime.dateFormat = "HH:mm"
+        timeLabel.text  = dateFormatterTime.string(from: classes?.date ?? Date())
+//        dateLabel.text = classes.date
+        durationLabel.text = classes?.duration
+        courseCodeLabel.text = classes?.course?.courseCode
+        courseNameLabel.text = ((classes?.course?.name ?? "") + "\n" + (classes?.name ?? ""))
+        venueLabel.text = classes?.classroom?.classroomId
     }
 
 }

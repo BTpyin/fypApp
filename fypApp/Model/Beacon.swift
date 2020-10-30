@@ -18,6 +18,10 @@ class Beacon: Object, Mappable{
     @objc dynamic var classroomId : String?
     @objc dynamic var remarks : String?
     
+//    override static func primaryKey() -> String? {
+//      return "uuid"
+//    }
+    
     required convenience init?(map: Map) {
       self.init()
     }
@@ -29,4 +33,29 @@ class Beacon: Object, Mappable{
         classroomId <- map["classroomId"]
         remarks <- map["remarks"]
     }
+    
+    func demoBeacon(major :String, minor:String, classroomId: String)->Beacon{
+        var b=Beacon()
+        b.uuid = "10fa751d-3bdc-44f1-8367-f1572c73e5a9"
+        b.major = major
+        b.minor = minor
+        b.classroomId = classroomId
+        return b
+    }
 }
+
+class BeaconPayload : Mappable{
+  var beaconList: [Beacon]?
+//  var downloadToken: String?
+
+  required init?(map: Map) {
+
+  }
+
+  func mapping(map: Map) {
+    beaconList <- map["Beacons"]
+//    downloadToken <- map["downloadToken"]
+    
+  }
+}
+

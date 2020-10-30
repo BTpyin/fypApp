@@ -25,6 +25,13 @@ class AttendanceTableViewCell: UITableViewCell {
                       spread: 0)
         // Initialization code
     }
+    
+    func uiBind(classObj: Class){
+        courseNameLabel.text = ((classObj.course?.name ?? "" ) + "\n" + (classObj.name)!)
+        courseCodeLabel.text = classObj.course?.courseCode
+        locationLabel.text = classObj.classroom?.classroomId
+//        print(classObj)
+    }
 
 
 

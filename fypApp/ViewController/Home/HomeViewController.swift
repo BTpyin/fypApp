@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RealmSwift
+import FirebaseAuth
+import Firebase
 
 class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -34,7 +36,11 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 //    }
     override func loadView() {
         super.loadView()
-        viewModel.getStudent(sid: UserDefaults.standard.string(forKey: "studentId")!){ [weak self] (failReason) in
+        guard  let sid = UserDefaults.standard.string(forKey: "studentId") else {
+            logout()
+            return
+        }
+        viewModel.getStudent(sid: sid){ [weak self] (failReason) in
             if let tempUser = try? Realm().objects(Student.self){
                 Global.user.value = tempUser.first
             }else{
@@ -42,6 +48,13 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                }
               print(failReason)
 
+        }
+        
+        viewModel.syncBeaconList{ [weak self] (failReason) in
+         
+            if failReason != nil {
+              self?.showErrorAlert(reason: failReason, showCache: true, okClicked: nil)
+            }
         }
 
     }
@@ -53,10 +66,11 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         self.tabBarController?.tabBar.isHidden = false
         self.navigationItem.setHidesBackButton(true, animated: true)
         uiBind(student: Global.user.value)
-        
+        self.tableView.reloadData()
         Global.user.asObservable().subscribe(onNext: { student in
 
             self.uiBind(student: Global.user.value)
+            self.tableView.reloadData()
           }).disposed(by: disposeBag)
 
  
@@ -69,7 +83,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 5
+        return (Global.user.value?.courseTaking.count) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,11 +91,28 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
       guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeCourseListTableViewCell else {
         fatalError("The dequeued cell is not an instance of HomeCourseListTableViewCell.")
       }
+        cell.uiBind(classes: (Global.user.value?.courseTaking[indexPath.row]))
         return cell
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
         rootRouter?.showTest()
+    }
+    
+    func logout(){
+        
+        do {
+            try Auth.auth().signOut()
+        }
+             catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+        }
+        
+        UserDefaults.standard.set("", forKey: "studentId")
+        self.navigationController?.popToRootViewController(animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
     }
 
 }
@@ -94,5 +125,9 @@ class HomeViewModel{
 
     func getStudent(sid: String,completed: ((SyncDataFailReason?) -> Void)?){
       SyncData().syncStudent(sid: sid, completed: completed)
+    }
+    
+    func syncBeaconList(completed: ((SyncDataFailReason?) -> Void)?){
+        SyncData().syncBeacons(completed: completed)
     }
 }

@@ -38,11 +38,11 @@ class Api {
 //      }
       Alamofire.request(path, method: .get, parameters: param)
         .responseObject { (response: DataResponse<CMSResponse<U>>) in
-          #if DEVELOPMENT
+//          #if DEVELOPMENT
             print("🌏 Success: \(response.result.isSuccess)" +
                     "Request \(String(describing: response.request?.url)) " +
               "Err: \(String(describing: response.error)) ")
-          #endif
+//          #endif
           
           if response.result.isSuccess {
             let responseObject = response.result.value
@@ -140,12 +140,19 @@ class Api {
         )
     }
     
-    func getBeaconRepresent(uuid:String, success: @escaping (_ payload: Beacon?) -> Void,
-                          fail: @escaping (_ error: Error?, CMSResponse<Beacon>?) -> Void){
-        get("\(Api.requestBasePath)getBeaconRepresent\(uuid)",
-          responseClass: CMSResponse<Beacon>.self,
-          success: success, fail: fail
-        )
+    func getClassInfo(classId:String, success: @escaping (_ payload: Class?) -> Void,
+                      fail: @escaping (_ error: Error?, CMSResponse<Class>?) -> Void){
+            get("\(Api.requestBasePath)getClassInfo/?classId=\(classId)",
+            responseClass: CMSResponse<Class>.self,
+            success: success, fail: fail
+            )
+}
+    
+    func getBeaconRepresent(success: @escaping (_ payload: BeaconPayload?) -> Void,
+                          fail: @escaping (_ error: Error?, CMSResponse<BeaconPayload>?) -> Void){
+        get("\(Api.requestBasePath)getBeaconRepresent",
+                  responseClass: CMSResponse<BeaconPayload>.self,
+                  success: success, fail: fail)
     }
     
     func checkSidValid(sid:String, success: @escaping (_ payload: SidValid?) -> Void,

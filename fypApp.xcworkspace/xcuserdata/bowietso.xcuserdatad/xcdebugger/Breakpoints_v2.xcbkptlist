@@ -46,8 +46,8 @@
             filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "fypApp/ViewController/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "loadView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "fypApp/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "checkSidValid(sid:success:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "fypApp/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "checkSidValid(sid:success:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,9 +238,472 @@
             filePath = "fypApp/ViewController/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "uiBind(student:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98B994AA-1CFB-4634-9036-A39E9D9A4ED8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/View/HomeCourseListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "HomeCourseListTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E72D10F-77A0-4128-AAB1-0E2B923D473D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F81FCDB5-76A3-411B-9B23-E52A16E96F56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC072051-1F0A-48A6-9355-E8E6ABDF5167"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/View/HomeCourseListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "uiBind(classes:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35216D00-8744-4D0B-A6EF-736F58F77F1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9CCF235F-1FBF-4075-B8E7-2A4CAB00420E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "findClassInStudent(classroomId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA54F929-C341-4182-AE76-30DE1290C61D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D528A89-821D-4EA4-9227-463E4A7054AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "makeDemoBeaconList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0D528A89-821D-4EA4-9227-463E4A7054AC - 3f8ffba6aecab661"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewModel.makeDemoBeaconList() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "0D528A89-821D-4EA4-9227-463E4A7054AC - 3f8ffba6aecab661"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewModel.makeDemoBeaconList() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95092B46-212C-4848-B019-C7A3FA8FBB71"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "makeDemoBeaconList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E86CF60-203C-4DA1-AFB5-8F3D86BE5074"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "findClassInStudent(classroomId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "032A5808-361B-4BBE-A8E0-CB17850D8386"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "findClassInStudent(classroomId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E03BA29-1D6F-48E4-8846-16F8EE350CFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E03BA29-1D6F-48E4-8846-16F8EE350CFA - cc3616ad396b5c33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "2734">
+               </Location>
+               <Location
+                  uuid = "3E03BA29-1D6F-48E4-8846-16F8EE350CFA - cc3616ad396b5c33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "6194">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED15A184-3EB2-44AE-88EB-B4120DF7E5A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "findClassInStudent(classroomId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "573371F5-C733-405D-BAF6-3E65F2F7AD73"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "573371F5-C733-405D-BAF6-3E65F2F7AD73 - cc3616ad396b5fa7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "6897">
+               </Location>
+               <Location
+                  uuid = "573371F5-C733-405D-BAF6-3E65F2F7AD73 - 918bad6f2b1ac0cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Array&lt;fypApp.Class&gt;) -&gt; () in fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38856A13-302A-4A9B-AEC8-297550215F41"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "getClassFromCMS(classId:completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "38856A13-302A-4A9B-AEC8-297550215F41 - 4a1890e6036b54e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;fypApp.Class&gt;) -&gt; () in fypApp.AttendanceViewModel.getClassFromCMS(classId: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "666">
+               </Location>
+               <Location
+                  uuid = "38856A13-302A-4A9B-AEC8-297550215F41 - f83c43e5772046db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;fypApp.CMSResponse&lt;fypApp.Class&gt;&gt;) -&gt; () in fypApp.AttendanceViewModel.getClassFromCMS(classId: Swift.String, completed: Swift.Optional&lt;(Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "177">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "437E147D-981E-4404-A5A5-4AFF0A463BF1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/View/AttendanceTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "uiBind(classObj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBC8A4A6-54D8-4486-A2A5-8CAC78048F3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BBC8A4A6-54D8-4486-A2A5-8CAC78048F3A - cc3616ad396b5d88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "3929">
+               </Location>
+               <Location
+                  uuid = "BBC8A4A6-54D8-4486-A2A5-8CAC78048F3A - cc3616ad396b5d88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "6231">
+               </Location>
+               <Location
+                  uuid = "BBC8A4A6-54D8-4486-A2A5-8CAC78048F3A - 99faa91636b1da47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;fypApp.SyncDataFailReason&gt;) -&gt; () in fypApp.AttendanceViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "fypApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bowietso/Documents/App/iOS/fypApp/fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93D61564-A1BE-46C9-9CAD-CEA46B1ACD72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fypApp/ViewController/Attendnace/AttendanceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

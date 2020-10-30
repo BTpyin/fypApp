@@ -156,8 +156,8 @@
                                                     <constraint firstItem="rGQ-EN-vCN" firstAttribute="top" secondItem="D74-sU-KzO" secondAttribute="bottom" constant="7" id="w8e-Wf-OwE"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Taking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75b-sD-qHY">
-                                                <rect key="frame" x="33" y="128" width="139.5" height="26.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75b-sD-qHY">
+                                                <rect key="frame" x="33" y="128" width="128" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -322,6 +322,7 @@
                                                             <outlet property="durationLabel" destination="qag-XD-bCp" id="PEz-09-Qqu"/>
                                                             <outlet property="timeLabel" destination="5rI-sv-e3e" id="qIB-3C-fUn"/>
                                                             <outlet property="topLayerView" destination="ELa-IJ-Dkv" id="ezg-pZ-kML"/>
+                                                            <outlet property="venueLabel" destination="bka-2N-CLk" id="qRX-Te-Way"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
