@@ -179,6 +179,7 @@
 		0E9219E0250F800100CD001B /* fypApp */ = {
 			isa = PBXGroup;
 			children = (
+				0EFA3796254C7C6C007A66B6 /* Api+SyncData */,
 				0E5921D3252218C50027CCD9 /* View */,
 				0E97508D2513648E000711ED /* Model */,
 				0E921A562510A90E00CD001B /* Storyboard */,
@@ -186,15 +187,12 @@
 				0E9219FC250F833600CD001B /* Router */,
 				0E9219F5250F828300CD001B /* Extension */,
 				0E9219E1250F800100CD001B /* AppDelegate.swift */,
-				0E9219E7250F800300CD001B /* Assets.xcassets */,
-				0E9219EC250F800300CD001B /* LaunchScreen.storyboard */,
 				0EA963ED2539F53700FFD45F /* GoogleService-Info.plist */,
 				0E9219EF250F800300CD001B /* Info.plist */,
-				0E9219E9250F800300CD001B /* Preview Content */,
-				0E5921E1252327510027CCD9 /* SyncData.swift */,
-				0E5921E4252329FD0027CCD9 /* Api.swift */,
-				0E5921E725234B6A0027CCD9 /* CMSResponse.swift */,
 				0EB9FF02252CAFF4007C3AFA /* Global.swift */,
+				0E9219EC250F800300CD001B /* LaunchScreen.storyboard */,
+				0E9219E9250F800300CD001B /* Preview Content */,
+				0E9219E7250F800300CD001B /* Assets.xcassets */,
 			);
 			path = fypApp;
 			sourceTree = "<group>";
@@ -313,6 +311,7 @@
 				0E4E9866254426F200B21257 /* SidValid.swift */,
 				0EFA3790254C1CBA007A66B6 /* Attendance.swift */,
 				0EFA3793254C213C007A66B6 /* AttendanceResponse.swift */,
+				0E5921E725234B6A0027CCD9 /* CMSResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +324,15 @@
 				0EA963E625388B8400FFD45F /* SignInViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0EFA3796254C7C6C007A66B6 /* Api+SyncData */ = {
+			isa = PBXGroup;
+			children = (
+				0E5921E1252327510027CCD9 /* SyncData.swift */,
+				0E5921E4252329FD0027CCD9 /* Api.swift */,
+			);
+			path = "Api+SyncData";
 			sourceTree = "<group>";
 		};
 		B9A8A5227B2FD0D9303A6484 /* Frameworks */ = {
