@@ -57,6 +57,8 @@
 		0EB9FF03252CAFF4007C3AFA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9FF02252CAFF4007C3AFA /* Global.swift */; };
 		0EB9FF0625386AEC007C3AFA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB9FF0525386AEC007C3AFA /* Login.storyboard */; };
 		0EBD255425189CBB000B0ADA /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD255325189CBB000B0ADA /* Teacher.swift */; };
+		0EFA3791254C1CBA007A66B6 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA3790254C1CBA007A66B6 /* Attendance.swift */; };
+		0EFA3794254C213C007A66B6 /* AttendanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA3793254C213C007A66B6 /* AttendanceResponse.swift */; };
 		249D7B231B12396E438B6976 /* Pods_fypApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		0EB9FF02252CAFF4007C3AFA /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0EB9FF0525386AEC007C3AFA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0EBD255325189CBB000B0ADA /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		0EFA3790254C1CBA007A66B6 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
+		0EFA3793254C213C007A66B6 /* AttendanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceResponse.swift; sourceTree = "<group>"; };
 		10A2072963DE02C1A4C05AC4 /* Pods-fypApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fypApp.debug.xcconfig"; path = "Target Support Files/Pods-fypApp/Pods-fypApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5B39C7B552B5EF2CEA1BB614 /* Pods_fypApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fypApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE09A49A6B4F116CA2BEF4F /* Pods-fypApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fypApp.release.xcconfig"; path = "Target Support Files/Pods-fypApp/Pods-fypApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 				0E97509A251898C8000711ED /* Classroom.swift */,
 				0EBD255325189CBB000B0ADA /* Teacher.swift */,
 				0E4E9866254426F200B21257 /* SidValid.swift */,
+				0EFA3790254C1CBA007A66B6 /* Attendance.swift */,
+				0EFA3793254C213C007A66B6 /* AttendanceResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,7 +494,9 @@
 				0E975091251368F2000711ED /* Course.swift in Sources */,
 				0E5921E5252329FD0027CCD9 /* Api.swift in Sources */,
 				0E5921E825234B6A0027CCD9 /* CMSResponse.swift in Sources */,
+				0EFA3791254C1CBA007A66B6 /* Attendance.swift in Sources */,
 				0E921A08250F85B000CD001B /* BaseViewController.swift in Sources */,
+				0EFA3794254C213C007A66B6 /* AttendanceResponse.swift in Sources */,
 				0E921A06250F846C00CD001B /* BaseNavigationController.swift in Sources */,
 				0E9219F9250F82DF00CD001B /* UIViewRoundCornerExtension.swift in Sources */,
 				0E9219FB250F830500CD001B /* UIColorInitExtension.swift in Sources */,

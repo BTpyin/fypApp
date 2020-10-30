@@ -86,11 +86,11 @@ class Api {
       
       Alamofire.request(path, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default)
         .responseObject { (response: DataResponse<T>) in
-          #if DEVELOPMENT
+//          #if DEVELOPMENT
           print("🌏 Success: \(response.result.isSuccess)" +
               "Request \(String(describing: response.request?.url)) " +
               "Err: \(String(describing: response.error)) ")
-          #endif
+//          #endif
           
           if response.result.isSuccess {
             let responseObject: T? = response.result.value
@@ -114,7 +114,7 @@ class Api {
                 responseClass: CMSResponse<Student>.self, parameters: postBody,
                 success: success, fail: fail
             )
-}
+    }
     
     func getStudentInfo(sid:String, success: @escaping (_ payload: Student?) -> Void,
                         fail: @escaping (_ error: Error?, CMSResponse<Student>?) -> Void) {
@@ -153,6 +153,16 @@ class Api {
         get("\(Api.requestBasePath)getBeaconRepresent",
                   responseClass: CMSResponse<BeaconPayload>.self,
                   success: success, fail: fail)
+    }
+    
+    func takeAttendance(classroomId:String, sid: String, success: @escaping (_ payload: AttendanceResponse?) -> Void,
+                           fail: @escaping (_ error: Error?, CMSResponse<AttendanceResponse>?) -> Void) {
+        var postBody = Parameters()
+        postBody["sid"] = sid
+            post("\(Api.requestBasePath)takeAttendance/\(classroomId)",
+                responseClass: CMSResponse<AttendanceResponse>.self, parameters: postBody,
+                success: success, fail: fail
+            )
     }
     
     func checkSidValid(sid:String, success: @escaping (_ payload: SidValid?) -> Void,

@@ -141,6 +141,42 @@ class SyncData {
         })
     }
     
+    func takeAttendance(classId:String, classroomId:String, sid: String, completed:((SyncDataFailReason?) -> Void)?) {
+        Api().takeAttendance(classroomId: classroomId, sid: sid, success: {(response) in
+            guard let attendance = response else {
+                completed?(nil)
+                return
+            }
+            if (attendance.message == "success"){
+                SyncData.writeRealmAsync({ (realm) in
+                    if realm.object(ofType: Attendance.self, forPrimaryKey: classId) != nil {
+                        realm.delete(realm.object(ofType: Attendance.self, forPrimaryKey: classId)!)
+                    }
+                    let attendanceResponse = Attendance().setAttendance(id:classId,attend: true)
+                    realm.add(Attendance().setAttendance(id:classId,attend: true))
+                }, completed:{
+                    completed?(nil)
+                  })
+            }else{
+                return
+            }
+        }, fail: { (error, resposne) in
+            print("Reqeust Error: \(String(describing: error))")
+            let reason = self.failReason(error: error, resposne: resposne)
+//            SyncData.writeRealmAsync({ (realm) in
+//              realm.delete(realm.objects(Student.self))
+//                realm.add(Student().demoStudent())
+//
+//            }, completed:{
+//                completed?(nil)
+//              })
+            completed?(nil)
+            
+          })
+        Global.user.value = Student().demoStudent()
+    }
+    
+    
     func updateDisplayName(sid: String, name: String, completed:((SyncDataFailReason?) -> Void)?) {
         Api().updateDisplayName(name: name, sid: sid, success: {(response) in
             guard let student = response else {
@@ -190,7 +226,7 @@ class SyncData {
           })
 
     
-}
+    }
     
     
 }

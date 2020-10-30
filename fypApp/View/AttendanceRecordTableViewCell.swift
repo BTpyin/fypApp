@@ -31,6 +31,18 @@ class AttendanceRecordTableViewCell: UITableViewCell {
                       spread: 0)
         // Initialization code
     }
+    
+    func uiBind(classObj: Class){
+        courseNameLabel.text = ((classObj.course?.name ?? "" ) + "\n" + (classObj.name ?? ""))
+        courseCodeLabel.text = classObj.course?.courseCode
+        locationLabel.text = classObj.classroom?.classroomId
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+        dateLabel.text = dateFormatterPrint.string(from: classObj.date ?? Date())
+        classCodeLabel.text = classObj.name
+        
+        
+    }
 
 
 }
