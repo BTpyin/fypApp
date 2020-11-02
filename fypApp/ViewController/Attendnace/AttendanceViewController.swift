@@ -7,31 +7,63 @@
 //
 
 import UIKit
+import CoreLocation
 import RealmSwift
 import RxRealm
 import RxSwift
 
-class AttendanceViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class AttendanceViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     var rootRouter: RootRouter? {
       return router as? RootRouter
     }
     var viewModel: AttendanceViewModel?
     var disposeBag = DisposeBag()
+    var locationManager : CLLocationManager?
     
+    @IBOutlet weak var beachSearchButton: UIButton!
+    @IBOutlet weak var beaconIndicatorView: UIView!
+    @IBOutlet weak var beaconIndicatorLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        let helper = BeaconHelper()
+        locationManager = helper.locationManager
+        locationManager?.delegate = self
+        locationManager?.requestAlwaysAuthorization()
         viewModel = AttendanceViewModel()
+        //monitorBeacons()
+        uiBind()
         viewModel?.segmentValue.asObservable().subscribe(onNext: { segmentValue in
             self.viewModel?.fetchAttendanceRecordFromRealm()
+            if segmentValue {
+                self.viewModel?.startSearching.value = true
+                self.beaconIndicatorView.isHidden = false
+            }
+            else{
+                self.viewModel?.startSearching.value = false
+                self.beaconIndicatorView.isHidden = true
+            }
             self.tableView.reloadData()
             
 
           }).disposed(by: disposeBag)
+        
+        viewModel?.startSearching.asObservable().subscribe(onNext: {indicator in
+            if indicator {
+                self.beachSearchButton.setTitle("Stop Searching", for: .normal)
+                self.beachSearchButton.backgroundColor = UIColor.init(red: 255, green: 69, blue: 58)
+                self.monitorBeacons()
+            }else{
+                self.beachSearchButton.setTitle("Start Searching", for: .normal)
+                self.beachSearchButton.backgroundColor = UIColor.init(red: 50, green: 215, blue: 75)
+                self.stopMonitorBeacon()
+            }
+        }).disposed(by:disposeBag)
+        
         viewModel?.fetchBeaconListFromRealm()
         viewModel?.fetchAttendanceRecordFromRealm()
         //searchBeacon Algo
@@ -41,31 +73,62 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         //After Gettingt Beacons and stroed in viewModel
 //        viewModel?.makeDemoBeaconList()
         
-        guard let beaconList = viewModel?.demoDetectedBeaconList.value else {
-            self.showAlert("No Classroom detected")
-            return
-        }
+        //Using Demo Beacons Generated in code
         
-        viewModel?.detecedClassList?.value.removeAll()
+//        guard let beaconList = viewModel?.demoDetectedBeaconList.value else {
+//            self.showAlert("No Classroom detected")
+//            return
+//        }
         
-        for searchedBeacon in beaconList {
-            let classroomId = (viewModel?.retreiveBeacontoClassroomID(major: searchedBeacon.major!, minor: searchedBeacon.minor!))!
-            guard let searchedClass = (viewModel?.findClassInStudent(classroomId: classroomId)) else{
-//                self.showAlert("Detected Beacon Cannot Match with any Classroom")
-                continue
-            }
-            viewModel?.getClassFromCMSforDetectClass(classId: ((viewModel?.findClassInStudent(classroomId: classroomId))?.classId)!){[weak self] (failReason) in
-                
-            }
-        }
+//        viewModel?.detecedClassList?.value.removeAll()
+//
+//        for searchedBeacon in beaconList {
+//            let classroomId = (viewModel?.retreiveBeacontoClassroomID(major: searchedBeacon.major!, minor: searchedBeacon.minor!))!
+//            guard let searchedClass = (viewModel?.findClassInStudent(classroomId: classroomId)) else{
+////                self.showAlert("Detected Beacon Cannot Match with any Classroom")
+//                continue
+//            }
+//            viewModel?.getClassFromCMSforDetectClass(classId: ((viewModel?.findClassInStudent(classroomId: classroomId))?.classId)!){[weak self] (failReason) in
+//
+//            }
+//        }
 
         //observables for the lists
+        viewModel?.detectedBeaconList?.asObservable().subscribe(onNext: { beacon in
+            self.viewModel?.tempClassList.removeAll()
+            guard let beaconList = self.viewModel?.detectedBeaconList?.value else {
+                        self.showAlert("No Classroom detected")
+                        return
+                    }
+//            if (self.viewModel?.detectedBeaconList?.value.count)! > 0{
+//                self.stopMonitorBeacon()
+//
+//            }
+            for searchedBeacon in beaconList{
+                let classroomId = (self.viewModel?.retreiveBeacontoClassroomID(major: searchedBeacon.major.stringValue, minor: searchedBeacon.minor.stringValue))!
+                guard let searchedClass = (self.viewModel?.findClassInStudent(classroomId: classroomId)) else{
+    //                self.showAlert("Detected Beacon Cannot Match with any Classroom")
+                    continue
+                }
+                self.viewModel?.getClassFromCMSforDetectClass(classId: ((self.viewModel?.findClassInStudent(classroomId: classroomId))?.classId)!){[weak self] (failReason) in
+//                    self?.tableView.reloadData()
+                }
+            }
+//            self.viewModel?.detecedClassList?.value = self.viewModel!.tempClassList
+            self.beaconIndicatorLabel.text = "nill    " + (self.viewModel?.detecedClassList?.value.first?.classId ?? "nothing")
+
+        }).disposed(by: disposeBag)
+        
         
         viewModel?.detecedClassList?.asObservable().subscribe(onNext: { classValue in
-
+            if (self.viewModel?.detecedClassList?.value.count)! > 0 {
+                self.stopMonitorBeacon()
+            }
             self.tableView.reloadData()
           }).disposed(by: disposeBag)
 
+        //Mark: for handle attended class record
+        
         viewModel?.attendedClass?.asObservable().subscribe(onNext: { classValue in
 
             self.tableView.reloadData()
@@ -102,6 +165,96 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         viewModel?.segmentValue.value.toggle()
         
     }
+    
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        viewModel?.startSearching.value.toggle()
+    }
+    
+    func uiBind(){
+        beaconIndicatorView.layer.applySketchShadow(
+            color: .black,
+            alpha: 0.4,
+            x: 0,
+              y: 0.5,
+            blur: 6,
+              spread: 0)
+        beachSearchButton.roundCorners(cornerRadius: 10)
+    }
+    
+    func monitorBeacons() {
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            let proximityUUID = UUID(uuidString: Global.beaconUUID)
+            let beaconId = "deeplove"
+            let region = CLBeaconRegion(proximityUUID: proximityUUID!, identifier: beaconId)
+            locationManager?.startMonitoring(for: region)
+//            locationManager?.startRangingBeacons(in: region)
+        }
+        
+    }
+    
+    func stopMonitorBeacon(){
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            let proximityUUID = UUID(uuidString: Global.beaconUUID)
+            let beaconId = "deeplove"
+            let region = CLBeaconRegion(proximityUUID: proximityUUID!, identifier: beaconId)
+            locationManager?.stopMonitoring(for: region)
+            locationManager?.stopRangingBeacons(in: region)
+            locationManager?.stopUpdatingLocation()
+//            locationManager?.stopRangingBeacons(in: region)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
+        // 開始偵測範圍之後，就先檢查目前的 state 是否在範圍內
+        manager.requestState(for: region)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        guard region is CLBeaconRegion else { return }
+
+        if state == .inside { // 在範圍內
+            if CLLocationManager.isRangingAvailable() {
+                manager.startRangingBeacons(in: region as! CLBeaconRegion)
+            }
+        } else if state == .outside { // 在範圍外
+            if CLLocationManager.isRangingAvailable() {
+                manager.stopRangingBeacons(in: region as! CLBeaconRegion)
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        var beaconList = [CLBeacon]()
+        for beacon in beacons{
+            if (beacon.proximity == .immediate ){
+             //adding beacon that in near and immediate range to detected Beacon List
+                beaconList.append(beacon)
+                
+            }
+        }
+        viewModel?.detectedBeaconList?.value = beaconList
+        if beacons.count == 0{
+            viewModel?.detecedClassList?.value.removeAll()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("enter region")
+//        beaconIndicatorLabel.text="enter region"
+        if CLLocationManager.isRangingAvailable() {
+            locationManager?.startRangingBeacons(in: region as! CLBeaconRegion)
+            
+        }
+        
+        
+    }
+     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("exit region")
+//        beaconIndicatorLabel.text="exit region"
+        locationManager?.stopRangingBeacons(in: region as! CLBeaconRegion)
+        
+     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
@@ -162,12 +315,15 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
 
 class AttendanceViewModel{
     var segmentValue : Variable<Bool> = Variable<Bool>(true)
+    var startSearching : Variable<Bool> = Variable<Bool>(true)
     var beaconList: Results<Beacon>?
     var attendanceRecord: Results<Attendance>?
     var demoDetectedBeaconList: Variable<[Beacon]> = Variable<[Beacon]>([])
     var detecedClassList:Variable<[Class]>? = Variable<[Class]>([])
     var attendedClass: Variable<[Class]>? = Variable<[Class]>([])
+    var detectedBeaconList : Variable<[CLBeacon]>? = Variable<[CLBeacon]>([])
     var tempClass = Class()
+    var tempClassList = [Class]([])
     
     func syncClass(classId: String,completed: ((SyncDataFailReason?) -> Void)?){
         SyncData().syncClassInfo(classId: classId, completed: completed)
@@ -184,7 +340,12 @@ class AttendanceViewModel{
                 completed?(nil)
                 return
             }
-            self.detecedClassList?.value.append(classObj)
+            if self.detecedClassList?.value.count == 0{
+                self.detecedClassList?.value.append(classObj)
+                
+            }else{
+                self.detecedClassList?.value[0] = classObj
+            }
 //            print("detecedClassList: \n", self.detecedClassList?.value)
         }, fail: { (error, resposne) in
             print("Reqeust Error: \(String(describing: error))")

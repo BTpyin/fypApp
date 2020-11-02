@@ -36,7 +36,7 @@ class Beacon: Object, Mappable{
     
     func demoBeacon(major :String, minor:String, classroomId: String)->Beacon{
         var b=Beacon()
-        b.uuid = "10fa751d-3bdc-44f1-8367-f1572c73e5a9"
+        b.uuid = Global.beaconUUID
         b.major = major
         b.minor = minor
         b.classroomId = classroomId

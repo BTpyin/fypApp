@@ -36,7 +36,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-oO-jfh">
-                                <rect key="frame" x="15" y="149" width="384" height="698"/>
+                                <rect key="frame" x="15" y="149" width="384" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -258,16 +258,50 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbT-vw-fDq">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-Ws-X0y">
+                                        <rect key="frame" x="186.5" y="19.5" width="41.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.19607843137254902" green="0.84313725490196079" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM4-w5-sSv">
+                                        <rect key="frame" x="30" y="10" width="354" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonClicked:" destination="ZiR-Za-t0z" eventType="touchUpInside" id="YbB-9C-g7s"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vAG-Ws-X0y" firstAttribute="centerX" secondItem="JbT-vw-fDq" secondAttribute="centerX" id="3kw-dO-PoA"/>
+                                    <constraint firstItem="pM4-w5-sSv" firstAttribute="leading" secondItem="JbT-vw-fDq" secondAttribute="leading" constant="30" id="4Zo-3K-yLa"/>
+                                    <constraint firstItem="vAG-Ws-X0y" firstAttribute="centerY" secondItem="JbT-vw-fDq" secondAttribute="centerY" id="Ivl-td-kkD"/>
+                                    <constraint firstAttribute="height" constant="60" id="Vu0-Z9-OwF"/>
+                                    <constraint firstAttribute="trailing" secondItem="pM4-w5-sSv" secondAttribute="trailing" constant="30" id="ZYn-aF-VvI"/>
+                                    <constraint firstItem="pM4-w5-sSv" firstAttribute="top" secondItem="JbT-vw-fDq" secondAttribute="top" constant="10" id="b6u-sK-Z61"/>
+                                    <constraint firstAttribute="bottom" secondItem="pM4-w5-sSv" secondAttribute="bottom" constant="10" id="pQY-3c-5pQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EX7-um-hKY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JbT-vw-fDq" secondAttribute="bottom" id="4An-Av-9lF"/>
                             <constraint firstItem="AR6-oO-jfh" firstAttribute="leading" secondItem="EX7-um-hKY" secondAttribute="leading" constant="15" id="74f-mJ-IbT"/>
+                            <constraint firstItem="JbT-vw-fDq" firstAttribute="top" secondItem="AR6-oO-jfh" secondAttribute="bottom" constant="10" id="QVy-AO-cuz"/>
+                            <constraint firstItem="EX7-um-hKY" firstAttribute="trailing" secondItem="JbT-vw-fDq" secondAttribute="trailing" id="UjF-xf-Rso"/>
                             <constraint firstItem="EX7-um-hKY" firstAttribute="trailing" secondItem="AR6-oO-jfh" secondAttribute="trailing" constant="15" id="WDH-8D-8sU"/>
                             <constraint firstItem="oDC-mS-8VI" firstAttribute="leading" secondItem="EX7-um-hKY" secondAttribute="leading" constant="15" id="ay7-QX-izc"/>
                             <constraint firstItem="AR6-oO-jfh" firstAttribute="top" secondItem="oDC-mS-8VI" secondAttribute="bottom" constant="10" id="bVk-dn-jio"/>
-                            <constraint firstItem="EX7-um-hKY" firstAttribute="bottom" secondItem="AR6-oO-jfh" secondAttribute="bottom" constant="15" id="hg0-Cn-9Px"/>
                             <constraint firstItem="EX7-um-hKY" firstAttribute="trailing" secondItem="oDC-mS-8VI" secondAttribute="trailing" constant="15" id="lnh-M5-tb1"/>
+                            <constraint firstItem="JbT-vw-fDq" firstAttribute="leading" secondItem="EX7-um-hKY" secondAttribute="leading" id="noY-kr-e7L"/>
                             <constraint firstItem="oDC-mS-8VI" firstAttribute="top" secondItem="EX7-um-hKY" secondAttribute="top" constant="20" id="sap-dp-Bal"/>
                         </constraints>
                         <variation key="default">
@@ -279,6 +313,9 @@
                     <navigationItem key="navigationItem" title="Attendance" id="SlZ-Z2-5HZ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="beachSearchButton" destination="pM4-w5-sSv" id="uxE-kJ-Fsx"/>
+                        <outlet property="beaconIndicatorLabel" destination="vAG-Ws-X0y" id="t6B-cS-yWi"/>
+                        <outlet property="beaconIndicatorView" destination="JbT-vw-fDq" id="5HV-ds-Gg8"/>
                         <outlet property="segmentControl" destination="oDC-mS-8VI" id="VjG-f6-wt6"/>
                         <outlet property="tableView" destination="AR6-oO-jfh" id="sn4-ux-9c0"/>
                     </connections>

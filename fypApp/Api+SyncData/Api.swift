@@ -12,8 +12,9 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class Api {
-  static let requestBasePath = "http://127.0.0.1:8000/catalog/api/"
-
+//  static let requestBasePath = "http://192.168.0.102:8000/catalog/api/"
+    static let requestBasePath = "http://175.159.83.218:8000/catalog/api/"
+    
 //  static let ReceiveApiErrorNotification = NSNotification.Name.init("ReceiveApiErrorNotification")
 //  static let ErrorCodeRemoteSignout = 214
 //  static let ErrorCodeMaintanceMode = 1001

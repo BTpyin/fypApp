@@ -49,7 +49,9 @@ class HomeCourseListTableViewCell: UITableViewCell {
         dateFormatterTime.dateFormat = "HH:mm"
         timeLabel.text  = dateFormatterTime.string(from: classes?.date ?? Date())
 //        dateLabel.text = classes.date
-        durationLabel.text = classes?.duration
+        let durationFormatter = DateFormatter()
+        durationFormatter.dateFormat = "HH 'hour(s)' mm 'mins'"
+        durationLabel.text = durationFormatter.string(from: classes?.duration ?? Date())
         courseCodeLabel.text = classes?.course?.courseCode
         courseNameLabel.text = ((classes?.course?.name ?? "") + "\n" + (classes?.name ?? ""))
         venueLabel.text = classes?.classroom?.classroomId

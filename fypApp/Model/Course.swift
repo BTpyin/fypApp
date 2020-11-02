@@ -85,7 +85,7 @@ class  Class: Object, Mappable{
 //    @objc dynamic var credit : Int = 0
     @objc dynamic var type : String?
     @objc dynamic var date : Date?
-    @objc dynamic var duration : String?
+    @objc dynamic var duration : Date?
 //    @objc dynamic var venue : String?
     @objc dynamic var teacher : String?
     @objc dynamic var course : CourseInClass?
@@ -103,7 +103,8 @@ class  Class: Object, Mappable{
     func mapping(map: Map) {
         var dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
-
+        var durationFormatterGet = DateFormatter()
+        durationFormatterGet.dateFormat = "HH:mm:ss"
         
 //        courseCode <- map["course_code"]
         classId <- map["classId"]
@@ -113,8 +114,10 @@ class  Class: Object, Mappable{
         var s:String?
         s <- map["date"]
         date = dateFormatterGet.date(from: s!)
+        var d:String?
+        d <- map["duration"]
+        duration = durationFormatterGet.date(from: d!)
         //date = Calendar.current.date(byAdding: .hour, value: 0, to: date!)
-        duration <- map["duration"]
 //        venue <- map["classroomId"]
         teacher <- map["teacher"]
         course <- map["course"]
