@@ -31,4 +31,16 @@ class BeaconHelper{
         }
         
     }
+    
+    func stopMonitorBeacon(){
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            let proximityUUID = UUID(uuidString: Global.beaconUUID)
+            let beaconId = "deeplove"
+            let region = CLBeaconRegion(proximityUUID: proximityUUID!, identifier: beaconId)
+            locationManager?.stopMonitoring(for: region)
+            locationManager?.stopRangingBeacons(in: region)
+            locationManager?.stopUpdatingLocation()
+//            locationManager?.stopRangingBeacons(in: region)
+        }
+    }
 }

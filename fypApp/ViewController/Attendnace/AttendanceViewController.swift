@@ -20,6 +20,7 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
     var viewModel: AttendanceViewModel?
     var disposeBag = DisposeBag()
     var locationManager : CLLocationManager?
+    var helper = BeaconHelper()
     
     @IBOutlet weak var beachSearchButton: UIButton!
     @IBOutlet weak var beaconIndicatorView: UIView!
@@ -30,7 +31,7 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let helper = BeaconHelper()
+        
         locationManager = helper.locationManager
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
@@ -56,11 +57,11 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
             if indicator {
                 self.beachSearchButton.setTitle("Stop Searching", for: .normal)
                 self.beachSearchButton.backgroundColor = UIColor.init(red: 255, green: 69, blue: 58)
-                self.monitorBeacons()
+                self.helper.monitorBeacons()
             }else{
                 self.beachSearchButton.setTitle("Start Searching", for: .normal)
                 self.beachSearchButton.backgroundColor = UIColor.init(red: 50, green: 215, blue: 75)
-                self.stopMonitorBeacon()
+                self.helper.stopMonitorBeacon()
             }
         }).disposed(by:disposeBag)
         
@@ -122,7 +123,7 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         
         viewModel?.detecedClassList?.asObservable().subscribe(onNext: { classValue in
             if (self.viewModel?.detecedClassList?.value.count)! > 0 {
-                self.stopMonitorBeacon()
+                self.helper.stopMonitorBeacon()
             }
             self.tableView.reloadData()
           }).disposed(by: disposeBag)
@@ -181,29 +182,6 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
         beachSearchButton.roundCorners(cornerRadius: 10)
     }
     
-    func monitorBeacons() {
-        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-            let proximityUUID = UUID(uuidString: Global.beaconUUID)
-            let beaconId = "deeplove"
-            let region = CLBeaconRegion(proximityUUID: proximityUUID!, identifier: beaconId)
-            locationManager?.startMonitoring(for: region)
-//            locationManager?.startRangingBeacons(in: region)
-        }
-        
-    }
-    
-    func stopMonitorBeacon(){
-        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-            let proximityUUID = UUID(uuidString: Global.beaconUUID)
-            let beaconId = "deeplove"
-            let region = CLBeaconRegion(proximityUUID: proximityUUID!, identifier: beaconId)
-            locationManager?.stopMonitoring(for: region)
-            locationManager?.stopRangingBeacons(in: region)
-            locationManager?.stopUpdatingLocation()
-//            locationManager?.stopRangingBeacons(in: region)
-        }
-    }
-    
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         // 開始偵測範圍之後，就先檢查目前的 state 是否在範圍內
         manager.requestState(for: region)
@@ -259,7 +237,7 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
         if (viewModel?.segmentValue.value == true){
-            let controller = UIAlertController(title: "Take Attendance", message: "Take Attendance in \((viewModel?.detecedClassList?.value[indexPath.row])?.classroom?.classroomId)", preferredStyle: .alert)
+            let controller = UIAlertController(title: "Take Attendance", message: "Take Attendance in \(((viewModel?.detecedClassList?.value[indexPath.row])?.classroom?.classroomId)!)", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
                 
                 self.viewModel?.takeAttendanceToCMS(classId: (self.viewModel?.detecedClassList?.value[indexPath.row].classId)!, classroomId: (self.viewModel?.detecedClassList?.value[indexPath.row].classroomId)!){[weak self] (failReason) in
