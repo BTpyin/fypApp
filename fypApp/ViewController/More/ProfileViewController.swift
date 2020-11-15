@@ -25,8 +25,6 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var majorTextField: UITextField!
     
     var viewModel: ProfileViewModel?
-    
-    
     var moreRouter : MoreRouter?{
         return router as? MoreRouter
     }
@@ -47,7 +45,6 @@ class ProfileViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        // Do any additional setup after loading the view.
         Global.user.asObservable().subscribe(onNext: { student in
             
             self.uiBind(student: Global.user.value!)

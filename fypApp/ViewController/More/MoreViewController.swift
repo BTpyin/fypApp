@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 import FirebaseAuth
 import Firebase
 
@@ -39,7 +40,27 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         if (indexPath.row == 0){
             rootRouter?.showProfile()
         }else if(indexPath.row == 2){
-                logout()
+            let controller = UIAlertController(title: "Confirm Logout?", message: "Attendance Record that stored in local will be removed and will not be Recovered. (Teachers and Admin still be able to seethe record in server)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                self.logout()
+
+            }
+            controller.addAction(okAction)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            controller.addAction(cancelAction)
+            present(controller, animated: true, completion: nil)
+            
+        }else if(indexPath.row == 3){
+            let controller = UIAlertController(title: "Confirm Reset Password?", message: "Attendance Record that stored in local will be removed and will not be Recovered. (Teachers and Admin still be able to seethe record in server)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                self.rootRouter?.showReset()
+            }
+            controller.addAction(okAction)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            controller.addAction(cancelAction)
+            present(controller, animated: true, completion: nil)
+            
+            
         }
     }
     
@@ -66,6 +87,11 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
         
         UserDefaults.standard.set("", forKey: "studentId")
+//        SyncData.writeRealmAsync({ (realm) in
+//            realm.delete(realm.objects(Student.self))
+//            realm.delete(realm.objects(Attendance.self))
+//        }, completed:{
+//          })
         self.navigationController?.popToRootViewController(animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()
@@ -76,5 +102,5 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 }
 
 class MoreViewModel{
-    var settingContentList = ["Profile","Terms","Logout"]
+    var settingContentList = ["Profile","Terms","Logout","Reset Password"]
 }

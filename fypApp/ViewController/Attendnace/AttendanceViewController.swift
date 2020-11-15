@@ -207,7 +207,6 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
             if (beacon.proximity == .immediate ){
              //adding beacon that in near and immediate range to detected Beacon List
                 beaconList.append(beacon)
-                
             }
         }
         viewModel?.detectedBeaconList?.value = beaconList
@@ -221,16 +220,12 @@ class AttendanceViewController: BaseViewController, UITableViewDelegate, UITable
 //        beaconIndicatorLabel.text="enter region"
         if CLLocationManager.isRangingAvailable() {
             locationManager?.startRangingBeacons(in: region as! CLBeaconRegion)
-            
         }
-        
-        
     }
      func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exit region")
 //        beaconIndicatorLabel.text="exit region"
         locationManager?.stopRangingBeacons(in: region as! CLBeaconRegion)
-        
      }
     
     
@@ -306,12 +301,7 @@ class AttendanceViewModel{
     func syncClass(classId: String,completed: ((SyncDataFailReason?) -> Void)?){
         SyncData().syncClassInfo(classId: classId, completed: completed)
       }
-    
-    func fetchAttendedClass(){
-        
-    }
-    
-    
+
     func getClassFromCMSforDetectClass(classId:String, completed: ((SyncDataFailReason?) -> Void)?){
         Api().getClassInfo(classId: classId, success: {(response) in
             guard let classObj = response else {

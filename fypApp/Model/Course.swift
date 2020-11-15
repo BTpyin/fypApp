@@ -105,7 +105,6 @@ class  Class: Object, Mappable{
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
         var durationFormatterGet = DateFormatter()
         durationFormatterGet.dateFormat = "HH:mm:ss"
-        
 //        courseCode <- map["course_code"]
         classId <- map["classId"]
         name <- map["name"]

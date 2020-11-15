@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class Api {
-//  static let requestBasePath = "http://192.168.0.102:8000/catalog/api/"
-    static let requestBasePath = "http://175.159.83.218:8000/catalog/api/"
+  static let requestBasePath = "http://192.168.0.102:8000/catalog/api/"
+//    static let requestBasePath = "http://175.159.82.163:8000/catalog/api/"
     
 //  static let ReceiveApiErrorNotification = NSNotification.Name.init("ReceiveApiErrorNotification")
 //  static let ErrorCodeRemoteSignout = 214
@@ -51,24 +51,7 @@ class Api {
             if responseObject?.success ?? false {
                 success(responseObject?.value)
             }
-//            else {
-//
-//              if responseObject?.errorCode == Api.ErrorCodeRemoteSignout {
-//                // Handle ErrorCode: 214 Device Remote Signout
-//                NotificationCenter.default.post(name: Api.ReceiveApiErrorNotification,
-//                                                object: ["errorCode": Api.ErrorCodeRemoteSignout,
-//                                                         "response": responseObject])
-//              } else if responseObject?.errorCode == Api.ErrorCodeMaintanceMode {
-//                // Parse as Maintance Mode resposne
-//                if let jsonData = response.data,
-//                  let jsonString = String.init(data: jsonData, encoding: String.Encoding.utf8) {
-//                  let maintainceModeResposne = VTCResponse<MaintanceModePayload>(JSONString: jsonString)
-//
-//                  NotificationCenter.default.post(name: Api.ReceiveApiErrorNotification,
-//                                                  object: ["errorCode": Api.ErrorCodeMaintanceMode,
-//                                                           "response": maintainceModeResposne])
-//                }
-//              }
+
               else {
                 fail(nil, responseObject)
               

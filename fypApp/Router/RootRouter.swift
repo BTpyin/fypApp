@@ -108,6 +108,17 @@ class RootRouter: Router{
         navigationController?.pushViewController(profileViewController, animated: true)
     }
     
+    func showReset(){
+        guard
+            let resetPwViewController = UIStoryboard.storyboard(.more).instantiateViewController(ResetPwViewController.self) else {
+              return
+          }
+          
+        resetPwViewController.router = self
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.pushViewController(resetPwViewController, animated: true)
+    }
+    
     func showAttendance(){
         guard
           let attendanceViewController = UIStoryboard.storyboard(.attend).instantiateViewController(AttendanceViewController.self) else {

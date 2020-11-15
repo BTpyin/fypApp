@@ -90,7 +90,7 @@
                                             <constraint firstAttribute="width" constant="160" id="mMW-LV-02X"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <state key="normal" title="SIGNIN">
+                                        <state key="normal" title="REGISTER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -317,7 +317,7 @@
                                                     <constraint firstAttribute="width" constant="160" id="5WI-Xq-CT8"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="SIGNIN">
+                                                <state key="normal" title="REGISTER">
                                                     <color key="titleColor" red="1" green="0.74117647060000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>

@@ -41,10 +41,7 @@ class SyncData {
                 completed()
               }
             }
-
-
-
-          } catch {
+      } catch {
             print("writeRealmAsync Exception \(error)")
           }
         }
@@ -83,7 +80,7 @@ class SyncData {
             completed?(nil)
             
           })
-        Global.user.value = Student().demoStudent()
+//        Global.user.value = Student().demoStudent()
         
     }
     

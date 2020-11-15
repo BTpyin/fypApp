@@ -14,9 +14,7 @@ class AttendanceRecordTableViewCell: UITableViewCell {
     @IBOutlet weak var courseCodeLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
     @IBOutlet weak var recordView: UIView!
-    
     @IBOutlet weak var classCodeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -40,9 +38,6 @@ class AttendanceRecordTableViewCell: UITableViewCell {
         dateFormatterPrint.dateFormat = "yyyy-MM-dd"
         dateLabel.text = dateFormatterPrint.string(from: classObj.date ?? Date())
         classCodeLabel.text = classObj.name
-        
-        
+
     }
-
-
 }

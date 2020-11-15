@@ -83,7 +83,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (Global.user.value?.courseTaking.count) ?? 0
+        return (viewModel.getTodayClassArray()?.count) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,7 +91,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
       guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeCourseListTableViewCell else {
         fatalError("The dequeued cell is not an instance of HomeCourseListTableViewCell.")
       }
-        cell.uiBind(classes: (Global.user.value?.courseTaking[indexPath.row]))
+        cell.uiBind(classes: (viewModel.getTodayClassArray()?[indexPath.row]))
         return cell
     }
     
@@ -129,5 +129,12 @@ class HomeViewModel{
     
     func syncBeaconList(completed: ((SyncDataFailReason?) -> Void)?){
         SyncData().syncBeacons(completed: completed)
+    }
+    
+    func getTodayClassArray() -> [Class]?{
+        let startDate = Calendar.current.startOfDay(for: Date())
+        let endDate = Date().endOfDay()
+        let tdyPredicate = NSPredicate(format:  "(date >= %@) AND (date <= %@)", startDate as NSDate, endDate as NSDate)
+        return Global.user.value?.courseTaking.filter({($0.date! >= startDate && $0.date! <= endDate)})
     }
 }
