@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class Api {
-  static let requestBasePath = "http://192.168.0.102:8000/catalog/api/"
-//    static let requestBasePath = "http://175.159.82.163:8000/catalog/api/"
+//  static let requestBasePath = "http://192.168.0.102:8000/catalog/api/"
+    static let requestBasePath = "http://175.159.83.41:8000/catalog/api/"
     
 //  static let ReceiveApiErrorNotification = NSNotification.Name.init("ReceiveApiErrorNotification")
 //  static let ErrorCodeRemoteSignout = 214
@@ -126,7 +126,7 @@ class Api {
     
     func getClassInfo(classId:String, success: @escaping (_ payload: Class?) -> Void,
                       fail: @escaping (_ error: Error?, CMSResponse<Class>?) -> Void){
-            get("\(Api.requestBasePath)getClassInfo/?classId=\(classId)",
+            get("\(Api.requestBasePath)getClassInfo/\(classId)",
             responseClass: CMSResponse<Class>.self,
             success: success, fail: fail
             )

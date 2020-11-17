@@ -98,14 +98,14 @@ class ResetPwViewController: BaseViewController, UITextFieldDelegate {
             }
             
         }
-        if (autherror == false){
+//        if (autherror == false){
             do {
                 try Auth.auth().signOut()
             }
                  catch let signOutError as NSError {
                         print ("Error signing out: %@", signOutError)
             }
-            
+        
             UserDefaults.standard.set("", forKey: "studentId")
 //            SyncData.writeRealmAsync({ (realm) in
 //                realm.delete(realm.objects(Student.self))
@@ -119,7 +119,7 @@ class ResetPwViewController: BaseViewController, UITextFieldDelegate {
             let initial = storyboard.instantiateInitialViewController()
                 UIApplication.shared.keyWindow?.rootViewController = initial
             
-        }
+        
     }
     
     func configureUI(){
